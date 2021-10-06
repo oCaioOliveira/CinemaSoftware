@@ -95,7 +95,7 @@ public class TelaDetalheFilme implements ActionListener {
 		/// Realiza o posicionamento dos componentes
 		labelNomeFilme.setBounds(10, 10, 150, 25);
 		valorNomeFilme.setBounds(145, 10, 180, 25);
-		labelClasIndic.setBounds(10, 40, 150, 25);
+		labelClasIndic.setBounds(5, 40, 150, 25);
 		valorClasIndic.setBounds(145, 40, 180, 25);
 		labelDurFilme.setBounds(10, 70, 180, 25);
 		valorDurFilme.setBounds(145, 70, 180, 25);		
@@ -209,8 +209,8 @@ public class TelaDetalheFilme implements ActionListener {
 				/// Caso de cadastramento
 				else if (opcao == 1) {	
 					Filme novoFilme = new Filme(novoDado[0], Integer.parseInt(novoDado[3]), 
-							Integer.parseInt(novoDado[4]), novoDado[1], novoDado[5], 
-							novoDado[2], novoDado[6], Integer.parseInt(novoDado[7]), 
+							Integer.parseInt(novoDado[4]), novoDado[1], novoDado[2], 
+							novoDado[5], novoDado[6], Integer.parseInt(novoDado[7]), 
 							Integer.parseInt(novoDado[8]), novoDado[9]);
 					
 					filme.cadastrar(novoFilme);
@@ -220,8 +220,8 @@ public class TelaDetalheFilme implements ActionListener {
 				/// Caso de alteração/remoção
 				else if (opcao == 2) {
 					Filme attFilme = new Filme(novoDado[0], Integer.parseInt(novoDado[3]), 
-							Integer.parseInt(novoDado[4]), novoDado[1], novoDado[5], 
-							novoDado[2], novoDado[6], Integer.parseInt(novoDado[7]), 
+							Integer.parseInt(novoDado[4]), novoDado[1], novoDado[2], 
+							novoDado[5], novoDado[6], Integer.parseInt(novoDado[7]), 
 							Integer.parseInt(novoDado[8]), novoDado[9]);
 					
 					filme.editar(attFilme, posicao);

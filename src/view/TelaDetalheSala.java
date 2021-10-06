@@ -172,7 +172,7 @@ public class TelaDetalheSala implements ActionListener {
 				/// Caso de erro em cadastro de filme
 				if ((opcao == 1 || opcao == 2) && ("".equals(novoDado[0]) || "".equals(novoDado[1]) || "".equals(novoDado[2].replaceAll("[\\D]", "")) || 
 						"".equals(novoDado[3]) || "".equals(novoDado[4].replaceAll("[\\D]", "")) ||
-						"".equals(novoDado[5].replaceAll("[\\D]", "")) || "".equals(novoDado[6]))) {
+						"".equals(novoDado[5].replaceAll("[\\D]", "")))) {
 					mensagemErroCadastro();
 				}
 				
@@ -180,7 +180,7 @@ public class TelaDetalheSala implements ActionListener {
 				else if (opcao == 1) {
 					SalaCinema novasala = new SalaCinema(novoDado[0], novoDado[3], 
 							Integer.parseInt(novoDado[4]), novoDado[1], Integer.parseInt(novoDado[5]), 
-							Integer.parseInt(novoDado[2]), Boolean.valueOf(novoDado[6]));
+							Integer.parseInt(novoDado[2]), false);
 					
 					sala.cadastrar(novasala);
 					mensagemSucessoCadastro();
@@ -190,7 +190,7 @@ public class TelaDetalheSala implements ActionListener {
 				else if (opcao == 2) {
 					SalaCinema attsala = new SalaCinema(novoDado[0], novoDado[3], 
 							Integer.parseInt(novoDado[4]), novoDado[1], Integer.parseInt(novoDado[5]), 
-							Integer.parseInt(novoDado[2]), Boolean.valueOf(novoDado[6]));
+							Integer.parseInt(novoDado[2]), false);
 					
 					sala.editar(attsala, posicao);
 					mensagemSucessoCadastro();

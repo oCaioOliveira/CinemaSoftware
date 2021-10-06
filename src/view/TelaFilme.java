@@ -1,4 +1,5 @@
 package view;
+import javax.swing.ImageIcon;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -16,6 +17,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private JButton voltar;
 	private JButton pesquisa;
 	private JButton interrogacao;
+	private JButton seta;
 	private JTextField campoBusca;
 	private JPanel panel = new JPanel(new BorderLayout());
 	private JScrollPane ScrollPane = new JScrollPane();
@@ -43,15 +45,18 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		voltar = new JButton("Voltar");
 		pesquisa = new JButton("Buscar");
 		interrogacao = new JButton("?");
+		seta = new JButton(">");
 		campoBusca = new JTextField(200);
 		
 		/// Realiza a seleção de fontes para cada um dos componentes
 		titulo.setFont(new Font("Arial", Font.BOLD, 30));
+		//titulo.setForeground(Color.white);
 		cadastroFilme.setFont(new Font("Arial", Font.BOLD, 17));
 		refreshFilme.setFont(new Font("Arial", Font.BOLD, 17));
 		voltar.setFont(new Font("Arial", Font.BOLD, 17));
 		pesquisa.setFont(new Font("Arial", Font.BOLD, 15));
 		interrogacao.setFont(new Font("Arial", Font.BOLD, 20));
+		seta.setFont(new Font("Arial", Font.BOLD, 15));
 		listaFilmesCadastrados.setFont(new Font("Arial", Font.BOLD, 15));
 		
 	
@@ -60,10 +65,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		cadastroFilme.setBounds(166, 280, 150, 50);
 		refreshFilme.setBounds(326, 280, 150, 50);
 		voltar.setBounds(7, 280, 150, 50);
-		panel.setBounds(40, 110, 400, 140);
+		panel.setBounds(20, 110, 400, 140);
 		pesquisa.setBounds(260, 70, 100, 25);
 		campoBusca.setBounds(60, 70, 185, 25);
 		interrogacao.setBounds(370, 70, 50, 25);
+		seta.setBounds(429, 160, 45, 40);
 		ScrollPane.setViewportView(listaFilmesCadastrados);
 		listaFilmesCadastrados.setLayoutOrientation(JList.VERTICAL);
         panel.add(ScrollPane);
@@ -80,12 +86,14 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		janela.add(pesquisa);
 		janela.add(campoBusca);
 		janela.add(interrogacao);
+		janela.add(seta);
 	
 		/// Dados do container
 		janela.setSize(500, 390);
 		janela.setVisible(true);
 		janela.setLocationRelativeTo(null);
 		janela.setResizable(false);
+		//janela.getContentPane().setBackground(Color.black);
 	
 		/// Detecção de eventos
 		cadastroFilme.addActionListener(this);
@@ -93,6 +101,7 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		voltar.addActionListener(this);
 		pesquisa.addActionListener(this);
 		interrogacao.addActionListener(this);
+		seta.addActionListener(this);
 		listaFilmesCadastrados.addListSelectionListener(this);
 		
 	}
@@ -134,6 +143,8 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 		
 		if (src == interrogacao) mensagemDuvida();
+		
+		if (src == seta) new TelaFilmeCartaz().criarTelaFilmeCartaz(filme);
 
 	}
 	

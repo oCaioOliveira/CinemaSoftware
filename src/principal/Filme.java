@@ -49,20 +49,20 @@ public class Filme {
 	
 	public void dadosPreCadastradosFilmes(){
 		Filme shang_chi = new Filme("Shang-Chi",135,12,"Português","Shang-Chi "
-				+ "deve enfrentar o passado quando é atraído para a teia da organização Dez Anéis.", 
+				+ "deve enfrentar o passado quando \né atraído para a teia da organização Dez Anéis.", 
 				"Ação","02/03/2021",2, 14,"15/03/2021");
-		Filme viuva_negra = new Filme("Viúva negra",133,12,"Português","Em Viúva Negra, acompanhamos a "
-				+ "vida de Natasha Romanoff (Scarlett Johansson) após os eventos de Guerra Civil. "
-				+ "Se escondendo do governo norte-americano devido a sua aliança com o time do Capitão América, "
-				+ "Natasha ainda precisa confrontar partes de sua história quando surge uma conspiração "
-				+ "perigosa ligada ao seu passado. Perseguida por uma força que não irá parar até derrotá-la, "
-				+ "ela terá que lidar com sua antiga vida de espiã, e também reencontrar membros de sua família "
-				+ "que deixou para trás antes de se tornar parte dos Vingadores.",
+		Filme viuva_negra = new Filme("Viúva Negra",133,12,"Português","Em Viúva Negra, acompanhamos a "
+				+ "vida de Natasha Romanoff (Scarlett Johansson)\n após os eventos de Guerra Civil. "
+				+ "Se escondendo do governo norte-americano \ndevido a sua aliança com o time do Capitão América, "
+				+ "Natasha ainda precisa confrontar \npartes de sua história quando surge uma conspiração "
+				+ "perigosa ligada ao seu passado. \nPerseguida por uma força que não irá parar até derrotá-la, "
+				+ "ela terá que lidar com sua \nantiga vida de espiã, e também reencontrar membros de sua família "
+				+ "que deixou para trás antes\n de se tornar parte dos Vingadores.",
 				"Ação","02/09/2021",10, 15,"23/08/2020");
 		Filme pulp_fiction = new Filme("Pulp Fiction", 152,18,"Português","Os assassinos "
-				+ "Vincent e Jules passam por imprevistos ao recuperar uma mala para um mafioso. "
-				+ "O boxeador Butch é pago pelo mesmo mafioso para perder uma luta, e a esposa do criminoso "
-				+ "fica sob responsabilidade de Vincent por uma noite.Essas histórias se relacionam numa teia "
+				+ "Vincent e Jules passam por imprevistos \nao recuperar uma mala para um mafioso. "
+				+ "O boxeador Butch é pago pelo mesmo mafioso\n para perder uma luta, e a esposa do criminoso "
+				+ "fica sob responsabilidade de Vincent por\n uma noite.Essas histórias se relacionam numa teia "
 				+ "repleta de violência.","Ação","18/02/1995",13,12,"19/10/2021");
 		Filme titanic = new Filme("Titanic", 194, 12, "Português","Jack Dawson (Leonardo DiCaprio) é um jovem "
 				+ "aventureiro que, na mesa de jogo, ganha uma passagem para a primeira viagem do transatlântico Titanic."
@@ -75,10 +75,10 @@ public class Filme {
 				+ " Logo eles se apaixonam, despertando a fúria de Caledon. "
 				+ "A situação fica ainda mais complicada quando o Titanic se choca com um iceberg, provocando algo que ninguém "
 				+ "imaginava ser possível: o naufrágio do navio.", "Drama","16/01/1998",8,22,"04/12/2021");
-		Filme gente_grande = new Filme("Gente Grande", 99,12,"Português","Cinco amigos de infância se reencontram após a morte de seu treinador."
-				+ " Juntos novamente, Lenny (Adam Sandler), Eric (Kevin James), Kurt (Chris Rock), Marcus (David Spade) e Rob (Rob Schneider) "
-				+ "decidem curtir o feriado de 4 de julho com suas famílias em uma casa no lago. Eles relembram os bons momentos e fazem novas "
-				+ "descobertas, além de se meterem em muitas confusões.","Comédia","24/09/2010",5, 6,"16/12/2021");
+		Filme gente_grande = new Filme("Gente Grande", 99,12,"Português","Cinco amigos de infância se reencontram após a morte de seu treinador.\n"
+				+ " Juntos novamente, Lenny (Adam Sandler), Eric (Kevin James), Kurt (Chris Rock), \nMarcus (David Spade) e Rob (Rob Schneider) "
+				+ "decidem curtir o feriado de\n 4 de julho com suas famílias em uma casa no lago.\n Eles relembram os bons momentos e fazem novas "
+				+ "descobertas,\n além de se meterem em muitas confusões.","Comédia","24/09/2010",5, 6,"16/12/2021");
 	
 		dadosFilmes.add(shang_chi);
 		dadosFilmes.add(viuva_negra);

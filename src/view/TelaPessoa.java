@@ -149,7 +149,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			campoBusca.setBounds(60, 70, 185, 25);
 			
 			janela.setLayout(null);
-
 			
 			/// Coloca os componentes no container
 			janela.add(titulo);
