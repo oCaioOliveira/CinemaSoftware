@@ -6,6 +6,12 @@ import javax.swing.*;
 import javax.swing.event.*;
 import principal.*;
 
+/**
+ * Criação da classe TelaPessoa, onde é criado o menu do cliente ou funcionário e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaPessoa implements ActionListener, ListSelectionListener {		
 	
 	/// Declaração dos componentes da GUI
@@ -33,6 +39,13 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private int p;
 	ClienteVIP cliente = new ClienteVIP();
 	Funcionario funcionario = new Funcionario();
+	
+	/** 
+	 * Definir as características da interface do Menu de clientes ou funcionarios como botões, títulos, janelas e adicioná los a janela
+	 * @param op inteiro que representa a opção selecionada no menu principal (TelaMenu)
+	 * @param c ClienteVIP que importa os dados do cliente criado no menu principal (TelaMenu)
+	 * @param f Funcionario que importa os dados do funcionário criado no menu principal (TelaMenu)
+	 */
 	
 	public void criaTelaPessoa(int op, ClienteVIP c, Funcionario f){
 		cliente = c;
@@ -183,6 +196,11 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		}
 
 	}
+	
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
 
 	/// Detecção de eventos relacionados aos botões
 	public void actionPerformed(ActionEvent e) {
@@ -251,6 +269,11 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		if (src == interrogacao) mensagemDuvida();
 			
 	}
+	
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ListSelectionEvent que detecta alguma ação com alguma opção da lista
+	 */
 
 	/// Detecção de eventos relacionados à lista de clientes ou funcionários
 	public void valueChanged(ListSelectionEvent e) {
@@ -273,6 +296,10 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 					JOptionPane.ERROR_MESSAGE);
 		}
 	}
+	
+	/**
+	 * Mostra uma mensagem para responder a dúvida sobre como pesquisar no campo de busca
+	 */
 	
 	public void mensagemDuvida() {
 		JOptionPane.showMessageDialog(null, "Digite o CPF do usuário desejado na barra de busca.", null, 

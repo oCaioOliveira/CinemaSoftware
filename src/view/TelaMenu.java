@@ -5,6 +5,12 @@ import java.awt.event.*;
 import javax.swing.*;
 import principal.*;
 
+/**
+ * Criação da classe TelaMenu, onde é criado o menu principal da interface e tem a função main
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaMenu implements ActionListener {
 	
 	/// Declaração dos componentes da GUI
@@ -24,6 +30,11 @@ public class TelaMenu implements ActionListener {
 	SalaCinema sla = new SalaCinema();
 	VendaIngresso vi = new VendaIngresso();
 	Filme fil = new Filme();
+	
+	/**
+	 * Chamar os dados pré cadastrados de ClienteVIP, Funcionario, SalaCinema, VendaIngresso e Filme, 
+	 * definir as características da interface como botões, títulos, janelas e adicioná los a janela
+	 */
 	
 	/// Construtor do menu
 	public TelaMenu() {
@@ -73,6 +84,11 @@ public class TelaMenu implements ActionListener {
 		janela.setResizable(false);
 	}
 	
+	/**
+	 * Criação da main, onde são detectadas as ações nos botões
+	 * @param args parâmetro para a main
+	 */
+	
 	/// Função main
 	public static void main(String[] args) {
 		TelaMenu menu = new TelaMenu();
@@ -85,6 +101,11 @@ public class TelaMenu implements ActionListener {
 		ingresso.addActionListener(menu);
 		sair.addActionListener(menu);
 	}
+	
+	/**
+	 * Detecta as ações e redireciona para as opções possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
 	
 	/// Detecção de eventos
 	public void actionPerformed(ActionEvent e) {

@@ -12,6 +12,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import principal.*;
 
+/**
+ * Criação da classe TelaDetalhePessoa, onde é criado o menu de detalhes do cliente ou funcionário e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaDetalhePessoa implements ActionListener {
 
 	/// Declaração dos componentes da GUI
@@ -52,6 +58,15 @@ public class TelaDetalhePessoa implements ActionListener {
 	ClienteVIP cliente = new ClienteVIP();
 	Funcionario funcionario = new Funcionario();
 	TelaPessoa p = new TelaPessoa();
+	
+	/**
+	 * Definir as características da interface do Menu de detalhes dos clientes ou funcionarios como botões, títulos, janelas e adicioná los a janela
+	 * @param op inteiro que representa a opção selecionada no menu de cliente ou funcionario (TelaPessoa)
+	 * @param p TelaPessoa que importa a classe Tela Pessoa
+	 * @param c ClienteVIP que importa os dados do cliente criado no menu principal (TelaMenu) e menu do cliente ou funcionario (TelaPessoa)
+	 * @param f Funcionario que importa os dados do funcionário criado no menu principal (TelaMenu) e menu do cliente ou funcionario (TelaPessoa)
+	 * @param pos inteiro que representa a posição do cliente ou funcionario na lista do menu do cliente ou funcionario (TelaPessoa)
+	 */
 	
 	public void criarTelaDetalhePessoa(int op, 
 		TelaPessoa p, ClienteVIP c, Funcionario f, int pos) {
@@ -242,6 +257,11 @@ public class TelaDetalhePessoa implements ActionListener {
 		botaoCancelar.addActionListener(this);
 	}
 
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
+	
 	/// Detecção de eventos relacionados aos dados da Pessoa
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
@@ -333,17 +353,29 @@ public class TelaDetalhePessoa implements ActionListener {
 		
 	}
 
+	/**
+	 * Mostra uma mensagem para indicar que houve sucesso na exclusão de dados
+	 */
+	
 	public void mensagemSucessoExclusao() {
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
+	
+	/**
+	 * Mostra uma mensagem para indicar que houve sucesso no cadastro ou salvamento de dados
+	 */
 
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
+	
+	/**
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados de cliente e apresentar as possíveis causas
+	 */
 	
 	public void mensagemErroCadastroCliente() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
@@ -353,6 +385,10 @@ public class TelaDetalhePessoa implements ActionListener {
 				JOptionPane.ERROR_MESSAGE);
 		janela.dispose();
 	}
+	
+	/**
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados de funcionário e apresentar as possíveis causas
+	 */
 	
 	public void mensagemErroCadastroFuncionario() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
