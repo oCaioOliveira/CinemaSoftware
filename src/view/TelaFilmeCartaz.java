@@ -77,6 +77,7 @@ public class TelaFilmeCartaz implements ActionListener{
 	
 		/// Dados do container
 		janela.setSize(500, 390);
+		sinopse1.setVisible(false);
 		janela.setVisible(true);
 		janela.setLocationRelativeTo(null);
 		janela.setResizable(false);

@@ -28,15 +28,15 @@ public class ClienteVIP extends Pessoa {
 	
 	/**
 	 * Criação do contrutor da classe ClienteVIP com os atributos da classe abstrata Pessoa e seus próprios atributos
-	 * @param primNome uma string que contenha o primeiro nome do cliente
-	 * @param ultNome uma string que contenha o ultimo nome do cliente
-	 * @param data uma string que contenha a data de nascimento do cliente
-	 * @param c uma string que contenha o CPF do cliente
-	 * @param numCel uma string que contenha o numero de celular do cliente
-	 * @param email uma string que contenha o email do cliente
-	 * @param genFav uma string que contenha o genero favorito do cliente
+	 * @param primNome uma string que contem o primeiro nome do cliente
+	 * @param ultNome uma string que contem o ultimo nome do cliente
+	 * @param data uma string que contem a data de nascimento do cliente
+	 * @param c uma string que contem o CPF do cliente
+	 * @param numCel uma string que contem o numero de celular do cliente
+	 * @param email uma string que contem o email do cliente
+	 * @param genFav uma string que contem o genero favorito do cliente
 	 * @param qntddFilmesVistos um inteiro que contenha a quantidade de filmes vistos do cliente
-	 * @param planAss uma string que contenha o plano de assinatura do cliente
+	 * @param planAss uma string que contem o plano de assinatura do cliente
 	 */
 	
 	// Sobrecarga
@@ -104,7 +104,7 @@ public class ClienteVIP extends Pessoa {
 	
 	/**
 	 * Cadastro do parametro cliente no ArrayList do tipo ClienteVIP, sendo inserido ao final deste Array
-	 * @param cliente um ClienteVIP que contenha todos os dados do construtor
+	 * @param cliente um ClienteVIP que contem todos os dados do construtor
 	 */
 	
 	// Funcao para cadastrar os dados de Cliente:
@@ -113,7 +113,7 @@ public class ClienteVIP extends Pessoa {
 	}
 	
 	/**
-	 * Cadastro de um cliente vazio, usado normalmente para ocupar posições sem utilidade
+	 * Cadastro de um cliente vazio, usado normalmente para ocupar posições sem utilidade para adicionar funcionalidade na lista quando é pesquisado o CPF
 	 */
 	
 	// Funcao para cadastrar um cliente vazio:

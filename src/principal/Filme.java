@@ -2,6 +2,12 @@ package principal;
 
 import java.util.*;
 
+/**
+ * Criação da classe Filme, seus dados pré cadastrados e seus respectivos métodos
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class Filme {
 
 	// ----------------- ATRIBUTOS ----------------- //
@@ -18,11 +24,29 @@ public class Filme {
 	private String dataExib;
 	private Ingresso ingresso[];
 	
+	/**
+	 * Criação da super
+	 */
+	
 	public Filme(){
 		super();
 	}
 	
 	// ---------------- CONSTRUTOR ---------------- // 
+	
+	/**
+	 * Criação do contrutor da classe Filme com os seus próprios atributos
+	 * @param nomeDoFilme uma string que contem o nome do filme
+	 * @param duracaoDoFilme um inteiro que contem a duração do filme em minutos
+	 * @param classificacao um inteiro que contem a idade da classificação indicativa do filme
+	 * @param idiomaDoFilme uma string que contem o idioma do filme
+	 * @param sinopseFilme uma string que contem a sinpse do filme
+	 * @param generoFilme uma string que contem o gênero do filme
+	 * @param data_lancamento uma string que contem a data de lançamento do filme
+	 * @param sala_transmissao um inteiro que contem a sala de transmissão do filme
+	 * @param hora um inteiro que contem o horário de exibição do filme
+	 * @param dt uma string que contem a data de exibição do filme
+	 */
 	
 	public Filme(String nomeDoFilme, int duracaoDoFilme, int classificacao, 
 			String idiomaDoFilme, String sinopseFilme, String generoFilme, 
@@ -41,12 +65,15 @@ public class Filme {
 	
 	// Funcionalidades:
 		
-		Scanner ler = new Scanner(System.in);
-		ArrayList<Filme> dadosFilmes = new ArrayList<Filme>();
-		Scanner input = new Scanner(System.in);
+	Scanner ler = new Scanner(System.in);
+	ArrayList<Filme> dadosFilmes = new ArrayList<Filme>();
+	Scanner input = new Scanner(System.in);
+		
+	/**
+	 * Criação de dados pré cadastrados usando o contrutor do Filme e adição destes no ArrayList do tipo Filme
+	 */
 		
 	// Pré-cadastro de dados do cliente:
-	
 	public void dadosPreCadastradosFilmes(){
 		Filme shang_chi = new Filme("Shang-Chi",135,12,"Português","Shang-Chi "
 				+ "deve enfrentar o passado quando \né atraído para a teia da organização Dez Anéis.", 
@@ -90,11 +117,42 @@ public class Filme {
 		
 	// ------------------ METODOS ------------------ //
 
+	/**
+	 * Cadastro do parametro filme no ArrayList do tipo Filme, sendo inserido ao final deste Array
+	 * @param filme um Filme que contem todos os dados do construtor, passa os dados do novo filme a ser adicionado ao ArrayList do tipo Filme
+	 */
+	
 	// Funcao para cadastrar os dados de Filme:
 	public void cadastrar(Filme filme) {
 		dadosFilmes.add(filme);
 	}
 		
+	/**
+	 * Cadastro de um filme vazio, usado normalmente para ocupar posições sem utilidade para adicionar funcionalidade na lista quando é pesquisado o nome do filme
+	 */
+	
+	// Funcao para cadastrar um filme vazio:
+	public void cadastrarvazio() {
+		Filme filme = new Filme("",0,0,"","", "","",0, 0,"");
+		dadosFilmes.add(filme);
+	}
+	
+	/**
+	 * Cadastro de um filme apenas com o nome do filme, para retornar a seguinte frase na lista da interface "Não foram encontrados resultados..."
+	 */
+	
+	// Funcao para retornar que não foram encontrados resultados:
+	public void produtoNaoEncontrado() {
+		Filme filme = new Filme("Não foram encontrados resultados...",0,0,"","", "","",0, 0,"");
+		dadosFilmes.add(filme);
+	}
+	
+	/**
+	 * Buscar dentro do ArrayList do tipo Filme o filme que tenha o nome igual ao que foi recebido no parâmetro
+	 * @param nome uma string que contenha o nome do filme
+	 * @return um filme tirado de dentro do ArrayList do tipo Filme com o nome igual ao parâmetro ou null, indica se o filme com o seu nome igual foi encontrado ou não
+	 */
+	
 	// Funcao para buscar um filme por nome e retornar aquele filme:
 	public Filme buscar(String nome) {
 		for(int i = 0; i < dadosFilmes.size(); i ++) 
@@ -104,17 +162,11 @@ public class Filme {
 		return null;
 	}
 	
-	// Funcao para cadastrar um filme vazio:
-	public void cadastrarvazio() {
-		Filme filme = new Filme("",0,0,"","", "","",0, 0,"");
-		dadosFilmes.add(filme);
-	}
-	
-	// Funcao para retornar que não foram encontrados resultados:
-	public void produtoNaoEncontrado() {
-		Filme filme = new Filme("Não foram encontrados resultados...",0,0,"","", "","",0, 0,"");
-		dadosFilmes.add(filme);
-	}
+	/**
+	 * Buscar dentro do ArrayList do tipo Filme o filme que tenha o nome igual ao que foi recebido no parâmetro
+	 * @param nome uma string que contenha o nome do filme
+	 * @return a posição do filme tirado de dentro do ArrayList do tipo Filme com o nome igual ao parâmetro ou -1, indica se o filme com o nome igual foi encontrado ou não
+	 */
 	
 	// Funcao para buscar um Filme Especifico por nome e retornar sua posição:
 	public int retornaPos(String nome) {
@@ -125,16 +177,32 @@ public class Filme {
 		return -1;
 	}
 	
+	/**
+	 * Editar um filme dentro do ArrayList do tipo Filme usando o método de deletar o filme com dados antigos e adicionar um novo filme com os dados atualizados no Array
+	 * @param filme um Filme que contenha todos os dados do construtor
+	 * @param pos um inteiro que contenha a posição do filme no ArrayList do tipo Filme
+	 */
+	
 	// Funcao para editar os dados do filme:
 	public void editar(Filme filme, int pos) {
 		deletar(pos);
 		cadastrar(filme);
 	}
 	
+	/**
+	 * Deletar um filme dentro do ArrayList do tipo Filme usando a sua posição
+	 * @param pos um inteiro que contenha a posição do filme no ArrayList do tipo Filme
+	 */
+	
 	// Funcao para deletar um filme especifico a partir de sua posicao:
 	public void deletar(int pos) {
 		dadosFilmes.remove(dadosFilmes.get(pos));
 	}
+	
+	/**
+	 * Chama os atributos de filme de forma organizada 
+	 * @return os atributos de filme de forma organizada
+	 */
 	
 	// Chamada de todos os dados de um Filme:
 	public String toString() {	
@@ -147,6 +215,11 @@ public class Filme {
 			   + "Gênero" + genero + "\n"
 			   + "Sala de transmissão: " + salaTransmissao + "\n";
 	}
+	
+	/**
+	 * Reune todos os nomes dos filmes em um vetor de string de forma ordenada
+	 * @return o vetor de string com todos os nomes dos filmes de forma ordenada
+	 */
 	
 	// Funcao para visualizar o nome dos filmes e retornar um vetor de string com eles na mesma ordem do arraylist:
 	public String[] visualizarNome() {
