@@ -14,7 +14,6 @@ import principal.*;
 public class TelaMenu implements ActionListener {
 	
 	/// Declaração dos componentes da GUI
-	
 	private static JFrame janela = new JFrame("Cinema");
 	private static JLabel titulo = new JLabel("Menu Principal");
 	private static JButton clienteVIP = new JButton("Cliente VIP");
