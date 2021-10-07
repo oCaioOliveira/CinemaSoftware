@@ -5,6 +5,13 @@ import java.awt.event.*;
 import javax.swing.*;
 import principal.*;
 
+
+/**
+ * Criação da classe TelaPessoa, onde é criado o menu do ingresso e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaIngresso implements ActionListener {	
 	
 	/// Declaração dos componentes da GUI
@@ -19,6 +26,11 @@ public class TelaIngresso implements ActionListener {
 	private int qntddIngressos;
 	VendaIngresso venda = new VendaIngresso();
 	private int i = 0;
+	
+	/**
+	 * Definir as características da interface do Menu de ingresso como botões, títulos, janelas e adicioná-los a janela
+	 * @param v VendaIngresso que importa os dados do ingresso criados no menu principal (TelaMenu)
+	 */
 	
 	public void criaTelaIngresso(VendaIngresso v){
 		venda = v;
@@ -65,6 +77,11 @@ public class TelaIngresso implements ActionListener {
 		
 	}
 
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
+	
 	/// Detecção de eventos relacionados aos botões
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
@@ -74,7 +91,7 @@ public class TelaIngresso implements ActionListener {
 				if ("".equals(valorQntddIngressos.getText().replaceAll("[\\D]", ""))) mensagemErro();
 				
 				else {
-					qntddIngressos = Integer.parseInt(valorQntddIngressos.getText());
+					qntddIngressos = Integer.parseInt(valorQntddIngressos.getText().replaceAll("[\\D]", ""));
 					while (i < qntddIngressos) {
 						new TelaDetalheIngresso().criarTelaDetalheIngresso(this, venda);
 						i ++;
@@ -87,6 +104,11 @@ public class TelaIngresso implements ActionListener {
 			if (src == voltar ) janela.dispose();
 	
 	}
+	
+	/**
+	 * Mostra uma mensagem que sinaliza erro e solicita que o usuário digite um número antes de prosseguir.
+	 * A mensagem aparece quando o usuário digita qualquer coisa que não seja um inteiro.
+	 */
 	
 	public void mensagemErro() {
 		JOptionPane.showMessageDialog(null, "ERRO!\n" + "Digite um número antes de prosseguir.", null, 

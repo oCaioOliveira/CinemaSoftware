@@ -11,6 +11,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import principal.*;
 
+/**
+ * Criação da classe TelaDetalheIngresso, onde é criado o menu de detalhes do ingresso e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaDetalheIngresso implements ActionListener {
 	
 	/// Declaração dos componentes da GUI
@@ -45,6 +51,12 @@ public class TelaDetalheIngresso implements ActionListener {
 	/// Declaração de dados a serem manipulados
 	private String[] novoDado = new String[13];
 	VendaIngresso venda = new VendaIngresso();
+	
+	/**
+	 * Definir as características da interface do Menu de detalhes do ingresso como botões, títulos, janelas e adicioná los a janela
+	 * @param p TelaIngresso que importa a classe Tela Ingresso
+	 * @param vi VendaIngresso que importa os dados do ingresso criados no menu principal (TelaMenu) e menu do filme (TelaIngresso)
+	 */
 	
 	public void criarTelaDetalheIngresso(TelaIngresso p, VendaIngresso vi) {
 		
@@ -138,6 +150,11 @@ public class TelaDetalheIngresso implements ActionListener {
 		botaoSalvar.addActionListener(this);
 		botaoCancelar.addActionListener(this);
 	}
+	
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
 
 	/// Detecção de eventos relacionados aos dados do ingresso
 	public void actionPerformed(ActionEvent e) {
@@ -182,18 +199,20 @@ public class TelaDetalheIngresso implements ActionListener {
 		}
 	}
 
-	public void mensagemSucessoExclusao() {
-		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null, 
-				JOptionPane.INFORMATION_MESSAGE);
-		janela.dispose();
-	}
-
+	/**
+	 * Mostra uma mensagem para indicar que houve sucesso no cadastro ou salvamento de dados
+	 */
+	
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!\n"
 				+ "O preço do pedido foi de " + novoDado[3] + ",00 R$.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
+	
+	/**
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados do filme e apresentar as possíveis causas
+	 */
 	
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "

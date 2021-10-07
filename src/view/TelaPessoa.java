@@ -41,10 +41,10 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	Funcionario funcionario = new Funcionario();
 	
 	/** 
-	 * Definir as características da interface do Menu de clientes ou funcionarios como botões, títulos, janelas e adicioná los a janela
+	 * Definir as características da interface do Menu de clientes ou funcionarios como botões, títulos, janelas e adicioná los à janela
 	 * @param op inteiro que representa a opção selecionada no menu principal (TelaMenu)
-	 * @param c ClienteVIP que importa os dados do cliente criado no menu principal (TelaMenu)
-	 * @param f Funcionario que importa os dados do funcionário criado no menu principal (TelaMenu)
+	 * @param c ClienteVIP que importa os dados do cliente criados no menu principal (TelaMenu)
+	 * @param f Funcionario que importa os dados do funcionário criados no menu principal (TelaMenu)
 	 */
 	
 	public void criaTelaPessoa(int op, ClienteVIP c, Funcionario f){
@@ -235,7 +235,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			cpf = campoBusca.getText().replaceAll("[\\D]", "");
 			p = cliente.retornaPos(cpf);
 			if (p == -1) {
-				c.produtoNaoEncontrado();
+				c.pessoaNaoEncontrado();
 				listaClientesCadastrados.setListData(c.visualizarNome());
 				listaClientesCadastrados.updateUI();
 			}
@@ -253,7 +253,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			cpf = campoBusca.getText().replaceAll("[\\D]", "");
 			p = funcionario.retornaPos(cpf);
 			if (p == -1) {
-				f.produtoNaoEncontrado();
+				f.pessoaNaoEncontrada();
 				listaFuncionariosCadastrados.setListData(f.visualizarNome());
 				listaFuncionariosCadastrados.updateUI();
 			}

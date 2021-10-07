@@ -80,7 +80,7 @@ public class ClienteVIP extends Pessoa {
 	// Pré-cadastro de dados do cliente:
 	
 	/**
-	 * Criação de dados pré cadastrados usando o contrutor do ClienteVIP e adição destes no ArrayList do tipo ClienteVIP
+	 * Criação de dados pré cadastrados usando o construtor do ClienteVIP e adição destes no ArrayList do tipo ClienteVIP
 	 */
 	
 	public void dadosPreCadastradosClientes() {
@@ -127,7 +127,7 @@ public class ClienteVIP extends Pessoa {
 	 */
 	
 	// Funcao para retornar que não foram encontrados resultados:
-	public void produtoNaoEncontrado() {
+	public void pessoaNaoEncontrado() {
 		ClienteVIP cliente = new ClienteVIP("Não foram encontrados resultados...", "", "", "", "", "", "", 0, "");
 		dadosCliente.add(cliente);
 	}
@@ -220,7 +220,7 @@ public class ClienteVIP extends Pessoa {
 	
 	/**
 	 * Retornar o primeiro nome de um cliente específico dentro do ArrayList do tipo ClienteVIP com base na sua posição
-	 * @param pos um inteiro que contenha a posição do cliente no ArrayList do tipo ClienteVIP
+	 * @param pos um inteiro que contem a posição do cliente no ArrayList do tipo ClienteVIP
 	 * @return a string do primeiro nome do cliente específico
 	 */
 	
@@ -313,7 +313,7 @@ public class ClienteVIP extends Pessoa {
 	
 	/**
 	 * get
-	 * @return a string do primeiro nome do cliente específico
+	 * @return a string do primeiro nome do cliente
 	 */
 	
 	public String getPrimeiroNome() {

@@ -3,6 +3,12 @@ package principal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Criação da classe VendaIngresso, seus dados pré cadastrados e seus respectivos métodos
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class VendaIngresso{
 
 	// ----------------- ATRIBUTOS ----------------- //
@@ -13,11 +19,23 @@ public class VendaIngresso{
 	private int qntddIngressos;
 	private Ingresso ingresso;
 	
+	/**
+	 * Criação da super
+	 */
+	
 	public VendaIngresso(){
 		super();
 	}
 	
 	// ---------------- CONSTRUTOR ---------------- //
+	
+	/**
+	 * Criação do construtor da classe VendaIngresso
+	 * @param formaDePagamento uma string que contém a forma de pagamento do ingresso
+	 * @param preco um double que contém o preço do ingresso
+	 * @param rec um int que contém o número do recibo do ingresso
+	 * @param i um Ingresso que contenha os dados do ingresso 
+	 */
 	
 	public VendaIngresso(String formaDePagamento, double preco, int rec, Ingresso i) {
 		formaPagamento = formaDePagamento;
@@ -37,6 +55,10 @@ public class VendaIngresso{
 	ArrayList<VendaIngresso> dadosVendaIngresso = new ArrayList<VendaIngresso>();
 	
 	// Pré-cadastro de dados do cliente:
+	
+	/**
+	 * Criação de dados pré cadastrados usando o construtor de VendaIngresso e adição destes no ArrayList do tipo VendaIngresso
+	 */
 	
 	public void dadosPreCadastradosVendaIngresso() {
 		Ingresso in1 = new Ingresso("Meia",2,"3D",11,'C', "Shang-Chi e a lenda dos dez anéis","Português",12,"02/09/2021");
@@ -58,9 +80,19 @@ public class VendaIngresso{
 	}
 	
 	// Funcao para cadastrar os dados de sala:
+	
+	/**
+	 * Cadastro do parametro venda no ArrayList do tipo VendaIngresso, sendo inserido ao final deste Array
+	 * @param venda uma VendaIngresso que contem todos os dados do construtor
+	 */
 	public void cadastrar(VendaIngresso venda) {
 		dadosVendaIngresso.add(venda);
 	}
+	
+	/**
+	 * Chama a String precoTotal
+	 * @return a string precoTotal 
+	 */
 	
 	public String toString() {
 		return "Preço total: R$" + precoTotal;
@@ -68,43 +100,92 @@ public class VendaIngresso{
 
 	// ------------ GETTERS AND SETTERS ------------ //
 
+	/**
+	 * get
+	 * @return a string da forma de pagamento da venda do ingresso específico
+	 */
 	
 	public String getFormaPagamento() {
 		return formaPagamento;
 	}
+	
+	/**
+	 * set 
+	 * @param formaPagamento uma string da forma de pagamento do ingresso
+	 */
 
 	public void setFormaPagamento(String formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
 
+	/**
+	 * get 
+	 * @return a string do preço total da venda do ingresso específico
+	 */
+	
 	public double getPrecoTotal() {
 		return precoTotal;
 	}
 
+	/**
+	 * set
+	 * @param precoTotal o número double do preço total da venda do ingresso específico
+	 */
+	
 	public void setPrecoTotal(double precoTotal) {
 		this.precoTotal = precoTotal;
 	}
 
+	/**
+	 * get 
+	 * @return o int recibo que contém o número do recibo do ingresso específico
+	 */
+	
 	public int getRecibo() {
 		return recibo;
 	}
 
+	/**
+	 * set
+	 * @param recibo o número do recibo do ingresso específico
+	 */
+	
 	public void setRecibo(int recibo) {
 		this.recibo = recibo;
 	}
 
+	/**
+	 * get
+	 * @return o int qntddIngressos que contém a quantidade de ingressos que serão vendidos 
+	 */
+	
 	public int getQntddIngressos() {
 		return qntddIngressos;
 	}
 
+	/**
+	 * set
+	 * @param qntddingressos a quantidade de ingressos que serão vendidos
+	 */
+	
 	public void setQntddIngressos(int qntddingressos) {
 		this.qntddIngressos = qntddingressos;
 	}
 
+	/**
+	 * get
+	 * @return um Ingresso ingresso que contém o ingresso específico
+	 */
+	
 	public Ingresso getIngresso() {
 		return ingresso;
 	}
 
+	/**
+	 * set
+	 * @param ingresso o Ingresso específico
+	 */
+	
 	public void setIngresso(Ingresso ingresso) {
 		this.ingresso = ingresso;
 	}

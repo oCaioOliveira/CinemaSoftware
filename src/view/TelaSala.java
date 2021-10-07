@@ -7,6 +7,12 @@ import javax.swing.*;
 import javax.swing.event.*;
 import principal.*;
 
+/**
+ * Criação da classe TelaSala, onde é criado o menu da sala e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaSala implements ActionListener, ListSelectionListener {	
 	
 	/// Declaração dos componentes da GUI
@@ -28,6 +34,11 @@ public class TelaSala implements ActionListener, ListSelectionListener {
 	private String nome;
 	private int p;
 	SalaCinema sala = new SalaCinema();
+	
+	/**
+	 * Definir as características da interface do Menu de sala como botões, títulos, janelas e adicioná los à janela
+	 * @param s SalaCinema que importa os dados da sala de cinema criados no menu principal (TelaMenu)
+	 */
 	
 	public void criaTelaSala(SalaCinema s){
 		sala = s;
@@ -94,6 +105,11 @@ public class TelaSala implements ActionListener, ListSelectionListener {
 	
 	}
 
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
+	
 	/// Detecção de eventos relacionados aos botões
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
@@ -133,7 +149,11 @@ public class TelaSala implements ActionListener, ListSelectionListener {
 
 	}
 	
-
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ListSelectionEvent que detecta alguma ação com alguma opção da lista
+	 */
+	
 	/// Detecção de eventos relacionados à lista de salas
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
@@ -148,6 +168,10 @@ public class TelaSala implements ActionListener, ListSelectionListener {
 					JOptionPane.ERROR_MESSAGE);
 		}
 	}
+	
+	/**
+	 * Mostra uma mensagem para responder a dúvida sobre como pesquisar no campo de busca
+	 */
 	
 	public void mensagemDuvida() {
 		JOptionPane.showMessageDialog(null, "Digite o número da sala desejado na barra de busca.", null, 

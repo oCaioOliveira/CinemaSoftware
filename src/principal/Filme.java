@@ -70,7 +70,7 @@ public class Filme {
 	Scanner input = new Scanner(System.in);
 		
 	/**
-	 * Criação de dados pré cadastrados usando o contrutor do Filme e adição destes no ArrayList do tipo Filme
+	 * Criação de dados pré cadastrados usando o construtor do Filme e adição destes no ArrayList do tipo Filme
 	 */
 		
 	// Pré-cadastro de dados do cliente:
@@ -230,42 +230,102 @@ public class Filme {
 		return var;
 	}
 	
+	/**
+	 * Retornar o nome de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return a string do nome do filme específico
+	 */
+	
 	// Funcoes a seguir são para retornar os dados de filmes específicos dentro do arraylist com base nas suas posições (Gets):	
 	public String retornaNomeFilme(int pos) {
 		return dadosFilmes.get(pos).getNome();
 	}
 	
+	/**
+	 * Retornar a duração de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return o inteiro da duração do filme específico
+	 */
+	
 	public int retornaDuracao(int pos) {
 		return dadosFilmes.get(pos).getDuracao();
 	}
+	
+	/**
+	 * Retornar a classificação indicativa de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return o inteiro da classificação indicativa do filme específico
+	 */
 	
 	public int retornaClasIndic(int pos) {
 		return dadosFilmes.get(pos).getClassificacaoIndicativa();
 	}
 	
+	/**
+	 * Retornar o idioma de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return a string do idioma do filme específico
+	 */
+	
 	public String retornaIdioma(int pos) {
 		return dadosFilmes.get(pos).getIdioma();
 	}
+	
+	/**
+	 * Retornar a sinopse de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return a string da sinopse do filme específico
+	 */
 	
 	public String retornaSinopse(int pos) {
 		return dadosFilmes.get(pos).getSinopse();
 	}
 	
+	/**
+	 * Retornar o gênero de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return a string do gênero do filme específico
+	 */
+	
 	public String retornaGenero(int pos) {
 		return dadosFilmes.get(pos).getGenero();
 	}
+	
+	/**
+	 * Retornar a data de lançamento de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return a string da data de lançamento do filme específico
+	 */
 	
 	public String retornaDataLanc(int pos) {
 		return dadosFilmes.get(pos).getDataLancamento();
 	}
 	
+	/**
+	 * Retornar a sala de transmissão de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return o inteiro da sala de transmissão do filme específico
+	 */
+	
 	public int retornaSalaTrans(int pos) {
 		return dadosFilmes.get(pos).getSalaTransmissao();
 	}
 	
+	/**
+	 * Retornar o horário de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return o inteiro do horário do filme específico
+	 */
+	
 	public int retornaHorario(int pos) {
 		return dadosFilmes.get(pos).getHorario();
 	}
+	
+	/**
+	 * Retornar a data de exibição de um filme específico dentro do ArrayList do tipo Filme com base na sua posição
+	 * @param pos um inteiro que contem a posição do filme no ArrayList do tipo Filme
+	 * @return a string da data de exibição do filme específico
+	 */
 	
 	public String retornaDataExib(int pos) {
 		return dadosFilmes.get(pos).getDataExibicao();
@@ -273,81 +333,181 @@ public class Filme {
 		
 	// ------------ GETTERS AND SETTERS ------------ //
 	
+	/**
+	 * get
+	 * @return a string do nome do filme específico
+	 */
+	
 	public String getNome() {
 		return nome;
 	}
+	
+	/**
+	 * set
+	 * @param nome uma string do nome do filme
+	 */
 	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
+	/**
+	 * get
+	 * @return a string da duração do filme específico
+	 */
+	
 	public int getDuracao() {
 		return duracao;
 	}
+	
+	/**
+	 * set
+	 * @param duracao um inteiro da duração do filme
+	 */
 	
 	public void setDuracao(int duracao) {
 		this.duracao = duracao;
 	}
 	
+	/**
+	 * get
+	 * @return o inteiro da classificação indicativa do filme específico
+	 */
+	
 	public int getClassificacaoIndicativa() {
 		return classificacaoIndicativa;
 	}
+	
+	/**
+	 * set
+	 * @param classificacaoIndicativa um inteiro da classificação indicativa do filme
+	 */
 	
 	public void setClassificacaoIndicativa(int classificacaoIndicativa) {
 		this.classificacaoIndicativa = classificacaoIndicativa;
 	}
 	
+	/**
+	 * get
+	 * @return a string do idioma do filme específico
+	 */
+	
 	public String getIdioma() {
 		return idioma;
 	}
+	
+	/**
+	 * set
+	 * @param idioma uma string do idioma do filme
+	 */
 	
 	public void setIdioma(String idioma) {
 		this.idioma = idioma;
 	}
 	
+	/**
+	 * get
+	 * @return a string do idioma do filme específico
+	 */
+	
 	public String getSinopse() {
 		return sinopse;
 	}
+	
+	/**
+	 * set
+	 * @param sinopse uma string da sinpse do filme
+	 */
 	
 	public void setSinopse(String sinopse) {
 		this.sinopse = sinopse;
 	}
 	
+	/**
+	 * get
+	 * @return a string do gênero do filme específico
+	 */
+	
 	public String getGenero() {
 		return genero;
 	}
+	
+	/**
+	 * set
+	 * @param genero uma string do gênero do filme
+	 */
 	
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
 	
+	/**
+	 * get
+	 * @return a string da data de lançamento do filme específico
+	 */
+	
 	public String getDataLancamento() {
 		return dataLancamento;
 	}
+	
+	/**
+	 * set
+	 * @param dataLancamento uma string da data de lançamento do filme
+	 */
 	
 	public void setDataLancamento(String dataLancamento) {
 		this.dataLancamento = dataLancamento;
 	}
 	
+	/**
+	 * get
+	 * @return a string da sala de transmissão do filme específico
+	 */
+	
 	public int getSalaTransmissao() {
 		return salaTransmissao;
 	}
+	
+	/**
+	 * set
+	 * @param salaTransmissao uma string da sala de transmissão do filme
+	 */
 	
 	public void setSalaTransmissao(int salaTransmissao) {
 		this.salaTransmissao = salaTransmissao;
 	}
 	
+	/**
+	 * get
+	 * @return um inteiro do horário de exibição do filme específico
+	 */
+	
 	public int getHorario() {
 		return horario;
 	}
+	
+	/**
+	 * set
+	 * @param horario um inteiro do horário de exibição do filme
+	 */
 
 	public void setHorario(int horario) {
 		this.horario = horario;
 	}
+	
+	/**
+	 * get
+	 * @return uma string da data de exibição do filme específico
+	 */
 
 	public String getDataExibicao() {
 		return dataExib;
 	}
+	
+	/**
+	 * set
+	 * @param dataExibicao uma string da data de exibição de exibição do filme
+	 */
 
 	public void setDataExibicao(String dataExibicao) {
 		this.dataExib = dataExibicao;

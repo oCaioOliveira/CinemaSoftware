@@ -11,6 +11,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import principal.*;
 
+/**
+ * Criação da classe TelaDetalheFilme, onde é criado o menu de detalhes do filme e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaDetalheFilme implements ActionListener {
 	
 	/// Declaração dos componentes da GUI
@@ -46,6 +52,13 @@ public class TelaDetalheFilme implements ActionListener {
 	private String s;
 	Filme filme = new Filme();
 	
+	/**
+	 * Definir as características da interface do Menu de detalhes do filme como botões, títulos, janelas e adicioná los a janela
+	 * @param op inteiro que representa a opção selecionada no menu de filme (TelaFilme)
+	 * @param p TelaFilme que importa a classe Tela Filme
+	 * @param f Filme que importa os dados do filme criados no menu principal (TelaMenu) e menu do filme (TelaFilme)
+	 * @param pos inteiro que representa a posição do filme na lista do menu do filme (TelaFilme)
+	 */
 	
 	public void criarTelaDetalheFilme(int op, 
 		TelaFilme p, Filme f, int pos) {
@@ -183,6 +196,11 @@ public class TelaDetalheFilme implements ActionListener {
 		botaoCancelar.addActionListener(this);
 	}
 
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
+	
 	/// Detecção de eventos relacionados aos dados do filme
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
@@ -242,17 +260,29 @@ public class TelaDetalheFilme implements ActionListener {
 		if(src == botaoCancelar) janela.dispose();
 	}
 
+	/**
+	 * Mostra uma mensagem para indicar que houve sucesso na exclusão de dados
+	 */
+	
 	public void mensagemSucessoExclusao() {
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
 
+	/**
+	 * Mostra uma mensagem para indicar que houve sucesso no cadastro ou salvamento de dados
+	 */
+	
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
+	
+	/**
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados do filme e apresentar as possíveis causas
+	 */
 	
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "

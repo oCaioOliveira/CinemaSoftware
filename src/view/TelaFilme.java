@@ -7,6 +7,12 @@ import javax.swing.*;
 import javax.swing.event.*;
 import principal.*;
 
+/**
+ * Criação da classe TelaFilme, onde é criado o menu do filme e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaFilme implements ActionListener, ListSelectionListener {	
 	
 	/// Declaração dos componentes da GUI
@@ -30,6 +36,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 	private String nome;
 	private int p;
 	Filme filme = new Filme();
+	
+	/**
+	 * Definir as características da interface do Menu de filmes como botões, títulos, janelas e adicioná los à janela
+	 * @param f Filme que importa os dados do filme criados no menu principal (TelaMenu)
+	 */
 	
 	public void criaTelaFilme(Filme f){
 		filme = f;
@@ -106,7 +117,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		
 	}
 
-	
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
 
 	/// Detecção de eventos relacionados aos botões
 	public void actionPerformed(ActionEvent e) {
@@ -148,7 +162,11 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 
 	}
 	
-
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ListSelectionEvent que detecta alguma ação com alguma opção da lista
+	 */
+	
 	/// Detecção de eventos relacionados à lista de filmes
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
@@ -165,6 +183,10 @@ public class TelaFilme implements ActionListener, ListSelectionListener {
 		}
 		
 	}
+	
+	/**
+	 * Mostra uma mensagem para responder a dúvida sobre como pesquisar no campo de busca
+	 */
 	
 	public void mensagemDuvida() {
 		JOptionPane.showMessageDialog(null, "Digite o nome do filme desejado na barra de busca.", null, 

@@ -11,6 +11,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import principal.*;
 
+/**
+ * Criação da classe TelaDetalheSala, onde é criado o menu de detalhes da sala e suas funcionalidades
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaDetalheSala implements ActionListener {
 
 	/// Declaração dos componentes da GUI
@@ -27,8 +33,6 @@ public class TelaDetalheSala implements ActionListener {
 	private JTextField valorQntdColunas;
 	private JLabel labelQntddLinhas = new JLabel("Linhas de cadeiras: ");
 	private JTextField valorQntddLinhas;
-	private JLabel labelCadeiraVaga = new JLabel("Cadeira Vaga: ");
-	private JTextField valorCadeiraVaga;
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoCancelar = new JButton("Cancelar");
 	private JButton botaoSalvar = new JButton("Salvar");
@@ -39,6 +43,14 @@ public class TelaDetalheSala implements ActionListener {
 	private int opcao;
 	private String s;
 	SalaCinema sala = new SalaCinema();
+	
+	/**
+	 * Definir as características da interface do Menu de detalhes da Sala como botões, títulos, janelas e adicioná los a janela
+	 * @param op inteiro que representa a opção selecionada no menu de sala (TelaSala)
+	 * @param p TelaSala que importa a classe Tela Sala
+	 * @param sla SalaCinema que importa os dados da sala criados no menu principal (TelaMenu) e menu da sala (TelaSala)
+	 * @param pos inteiro que representa a posição da sala na lista do menu da sala (TelaSala)
+	 */
 	
 	public void criarTelaDetalheSala(int op, 
 		TelaSala p, SalaCinema sla, int pos) {
@@ -63,7 +75,6 @@ public class TelaDetalheSala implements ActionListener {
 			valorFormSala = new JTextField(200);
 			valorQntdColunas = new JTextField(200);
 			valorQntddLinhas = new JTextField(200);
-			valorCadeiraVaga = new JTextField(200);	
 			
 		} 
 		/// Caso de alteração/remoção
@@ -75,7 +86,6 @@ public class TelaDetalheSala implements ActionListener {
 			valorFormSala = new JTextField(sala.retornaFormato(posicao), 200);
 			valorQntdColunas = new JTextField(String.valueOf(sala.retornaQntddColunasCadeiras(posicao)), 200);
 			valorQntddLinhas = new JTextField(String.valueOf(sala.retornaQntddLinhasCadeiras(posicao)), 200);
-			valorCadeiraVaga = new JTextField(String.valueOf(sala.retornaCadeiraVaga(posicao)), 200);	
 
 		}
 		
@@ -92,8 +102,6 @@ public class TelaDetalheSala implements ActionListener {
 		valorQntdColunas.setBounds(145, 130, 185, 25);
 		labelQntddLinhas.setBounds(10, 160, 150, 25);
 		valorQntddLinhas.setBounds(145, 160, 185, 25);
-		labelCadeiraVaga.setBounds(10, 190, 150, 25);
-		valorCadeiraVaga.setBounds(145, 190, 185, 25);
 
 		/// Caso de alteração/remoção
 		if (op == 2) {
@@ -156,6 +164,10 @@ public class TelaDetalheSala implements ActionListener {
 		botaoCancelar.addActionListener(this);
 	}
 
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
 
 	/// Detecção de eventos relacionados aos dados do filme
 	public void actionPerformed(ActionEvent e) {
@@ -167,7 +179,6 @@ public class TelaDetalheSala implements ActionListener {
 				novoDado[3] = valorTipoSala.getText();
 				novoDado[4] = valorQntddCadeiras.getText();
 				novoDado[5] = valorQntddLinhas.getText();
-				novoDado[6] = valorCadeiraVaga.getText();
 
 				/// Caso de erro em cadastro de filme
 				if ((opcao == 1 || opcao == 2) && ("".equals(novoDado[0]) || "".equals(novoDado[1]) || "".equals(novoDado[2].replaceAll("[\\D]", "")) || 
@@ -180,7 +191,7 @@ public class TelaDetalheSala implements ActionListener {
 				else if (opcao == 1) {
 					SalaCinema novasala = new SalaCinema(novoDado[0], novoDado[3], 
 							Integer.parseInt(novoDado[4]), novoDado[1], Integer.parseInt(novoDado[5]), 
-							Integer.parseInt(novoDado[2]), false);
+							Integer.parseInt(novoDado[2]));
 					
 					sala.cadastrar(novasala);
 					mensagemSucessoCadastro();
@@ -190,7 +201,7 @@ public class TelaDetalheSala implements ActionListener {
 				else if (opcao == 2) {
 					SalaCinema attsala = new SalaCinema(novoDado[0], novoDado[3], 
 							Integer.parseInt(novoDado[4]), novoDado[1], Integer.parseInt(novoDado[5]), 
-							Integer.parseInt(novoDado[2]), false);
+							Integer.parseInt(novoDado[2]));
 					
 					sala.editar(attsala, posicao);
 					mensagemSucessoCadastro();
@@ -210,6 +221,10 @@ public class TelaDetalheSala implements ActionListener {
 		if(src == botaoCancelar) janela.dispose();
 		
 	}
+	
+	/**
+	 * Mostra uma mensagem para indicar que houve sucesso na exclusão de dados
+	 */
 
 	public void mensagemSucessoExclusao() {
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null, 
@@ -217,11 +232,19 @@ public class TelaDetalheSala implements ActionListener {
 		janela.dispose();
 	}
 
+	/**
+	 * Mostra uma mensagem para indicar que houve sucesso no cadastro ou salvamento de dados
+	 */
+	
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
+	
+	/**
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados da sala e apresentar as possíveis causas
+	 */
 	
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "

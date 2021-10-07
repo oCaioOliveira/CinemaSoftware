@@ -6,6 +6,12 @@ import javax.swing.*;
 
 import principal.Filme;
 
+/**
+ * Criação da classe TelaFilmeCartaz, onde é criado um menu que mostra os filmes em cartaz e suas sinopses
+ * @author Caio César e Lucas Henrique
+ * @version 1.0 (Out 2020)
+ */
+
 public class TelaFilmeCartaz implements ActionListener{	
 	
 	/// Declaração dos componentes da GUI
@@ -25,6 +31,11 @@ public class TelaFilmeCartaz implements ActionListener{
 	private JLabel imagem3 = new JLabel(image3);
 	private JLabel imagem4 = new JLabel(image4);
 	Filme filme = new Filme();
+	
+	/**
+	 * Definir as características da interface do menu dos filmes em cartaz como botões, títulos, janelas e adicioná-los a janela
+	 * @param f Filme que importa os dados de filme criados no menu principal (TelaMenu)
+	 */
 	
 	public void criarTelaFilmeCartaz (Filme f){
 		filme = f;
@@ -91,6 +102,11 @@ public class TelaFilmeCartaz implements ActionListener{
 		
 	}
 
+	/**
+	 * Detecta as ações e redireciona para as opções e funcionalidades possíveis
+	 * @param e ActionEvent que detecta alguma ação com algum botão
+	 */
+	
 	/// Detecção de eventos relacionados aos botões
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
@@ -107,12 +123,20 @@ public class TelaFilmeCartaz implements ActionListener{
 
 	}
 	
+	/**
+	 * Mostra a sinopse do filme Shang-Chi ou a mensagem de erro caso o filme seja excluído
+	 */
+	
 	public void mensagemSinopse1() {
 		if (filme.retornaPos("SHANG-CHI") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
 				JOptionPane.ERROR_MESSAGE);
 		else JOptionPane.showMessageDialog(null, "Sinopse: " + filme.retornaSinopse(filme.retornaPos("SHANG-CHI")), null, 
 				JOptionPane.DEFAULT_OPTION);
 	}
+	
+	/**
+	 * Mostra a sinopse do filme Viúva Negra ou a mensagem de erro caso o filme seja excluído
+	 */
 	
 	public void mensagemSinopse2() {
 		if (filme.retornaPos("VIÚVA NEGRA") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
@@ -121,12 +145,22 @@ public class TelaFilmeCartaz implements ActionListener{
 				JOptionPane.DEFAULT_OPTION);
 	}	
 	
+	/**
+	 * Mostra a sinopse do filme Pulp Fiction ou a mensagem de erro caso o filme seja excluído
+	 */
+	
+	
 	public void mensagemSinopse3() {
 		if (filme.retornaPos("PULP FICTION") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
 				JOptionPane.ERROR_MESSAGE);
 		else JOptionPane.showMessageDialog(null, "Sinopse: " + filme.retornaSinopse(filme.retornaPos("PULP FICTION")), null, 
 				JOptionPane.DEFAULT_OPTION);
 	}	
+	
+	/**
+	 * Mostra a sinopse do filme Gente Grande ou a mensagem de erro caso o filme seja excluído
+	 */
+	
 	
 	public void mensagemSinopse4() {
 		if (filme.retornaPos("GENTE GRANDE") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
