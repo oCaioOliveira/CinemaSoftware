@@ -383,7 +383,6 @@ public class TelaDetalhePessoa implements ActionListener {
 				+ "1- Nem todos os campos foram preenchidos; \n"
 				+ "2- Filmes Vistos não contém apenas números", null, 
 				JOptionPane.ERROR_MESSAGE);
-		janela.dispose();
 	}
 	
 	/**
@@ -396,7 +395,6 @@ public class TelaDetalhePessoa implements ActionListener {
 				+ "1- Nem todos os campos foram preenchidos; \n"
 				+ "2- Salário não contém apenas números;", null, 
 				JOptionPane.ERROR_MESSAGE);
-		janela.dispose();
 	}
 
 }

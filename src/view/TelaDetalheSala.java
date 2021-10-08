@@ -253,7 +253,6 @@ public class TelaDetalheSala implements ActionListener {
 				+ "2- Quantidade de linhas, colunas e cadeiras"
 				+ " não contém apenas números;", null, 
 				JOptionPane.ERROR_MESSAGE);
-		janela.dispose();
 	}
 
 }

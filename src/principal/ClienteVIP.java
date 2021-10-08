@@ -181,6 +181,15 @@ public class ClienteVIP extends Pessoa {
 	}
 	
 	/**
+	 * Aumenta um filme visto em um cliente específico determinado pela sua posição
+	 * @param pos um inteiro que contenha a posição do cliente no ArrayList do tipo ClienteVIP
+	 */
+	
+	public void aumentaUmFilmeVisto(int pos) {
+		dadosCliente.get(pos).qntddFilmesVistos += 1;
+	}
+	
+	/**
 	 * Deletar um cliente dentro do ArrayList do tipo ClienteVIP usando a sua posição
 	 * @param pos um inteiro que contenha a posição do cliente no ArrayList do tipo ClienteVIP
 	 */

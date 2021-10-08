@@ -47,19 +47,24 @@ public class TelaDetalheIngresso implements ActionListener {
 	private JTextField valorData;
 	private JButton botaoCancelar = new JButton("Cancelar");
 	private JButton botaoSalvar = new JButton("Salvar");
+	private JButton clienteVIP = new JButton("Cliente VIP");
+	private JButton interrogacao = new JButton("?");;
 	
 	/// Declaração de dados a serem manipulados
 	private String[] novoDado = new String[13];
 	VendaIngresso venda = new VendaIngresso();
+	TelaDetalheClienteVIP tela = new TelaDetalheClienteVIP();
+	ClienteVIP cliente = new ClienteVIP();
 	
 	/**
 	 * Definir as características da interface do Menu de detalhes do ingresso como botões, títulos, janelas e adicioná los a janela
 	 * @param p TelaIngresso que importa a classe Tela Ingresso
 	 * @param vi VendaIngresso que importa os dados do ingresso criados no menu principal (TelaMenu) e menu do filme (TelaIngresso)
+	 * @param c ClienteVIP que importa os dados do cliente criados no menu principal (TelaMenu)
 	 */
 	
-	public void criarTelaDetalheIngresso(TelaIngresso p, VendaIngresso vi) {
-		
+	public void criarTelaDetalheIngresso(TelaIngresso p, VendaIngresso vi, ClienteVIP c) {
+		cliente = c;
 		venda = vi;
 
 		/// Cria um container e seus componentes
@@ -104,10 +109,14 @@ public class TelaDetalheIngresso implements ActionListener {
 		valorData.setBounds(145, 340, 185, 25);
 		botaoSalvar.setBounds(180, 375, 150, 50);
 		botaoCancelar.setBounds(10, 375, 150, 50);
+		clienteVIP.setBounds(100, 435, 150, 50);
+		interrogacao.setBounds(280, 435, 50, 50);
 		
 		/// Realiza a seleção de fontes para os botões "salvar" e "cancelar"
 		botaoSalvar.setFont(new Font("Arial", Font.BOLD, 18));
 		botaoCancelar.setFont(new Font("Arial", Font.BOLD, 18));
+		clienteVIP.setFont(new Font("Arial", Font.BOLD, 18));
+		interrogacao.setFont(new Font("Arial", Font.BOLD, 20));
 		
 		/// Coloca os componentes no container
 		this.janela.add(botaoCancelar);
@@ -137,11 +146,13 @@ public class TelaDetalheIngresso implements ActionListener {
 		this.janela.add(labelData);
 		this.janela.add(valorData);
 		this.janela.add(botaoSalvar);
+		this.janela.add(clienteVIP);
+		this.janela.add(interrogacao);
 
 		this.janela.setLayout(null);
 
 		/// Dados do container
-		this.janela.setSize(365, 480);
+		this.janela.setSize(365, 530);
 		this.janela.setVisible(true);
 		this.janela.setLocationRelativeTo(null);
 		this.janela.setResizable(false);
@@ -149,6 +160,8 @@ public class TelaDetalheIngresso implements ActionListener {
 		/// Detecção de eventos
 		botaoSalvar.addActionListener(this);
 		botaoCancelar.addActionListener(this);
+		clienteVIP.addActionListener(this);
+		interrogacao.addActionListener(this);
 	}
 	
 	/**
@@ -186,17 +199,50 @@ public class TelaDetalheIngresso implements ActionListener {
 							Integer.parseInt(novoDado[6]), novoDado[7].charAt(0), novoDado[8], novoDado[9], 
 							novoDado[10], novoDado[11]);
 					
-					VendaIngresso novavenda = new VendaIngresso(novoDado[0], Double.parseDouble(novoDado[3]), Integer.parseInt(novoDado[4]), novoIngresso);
+					VendaIngresso novaVenda = new VendaIngresso(novoDado[0], Double.parseDouble(novoDado[3]), Integer.parseInt(novoDado[4]), novoIngresso);
 					
-					venda.cadastrar(novavenda);
+					venda.cadastrar(novaVenda);
 					mensagemSucessoCadastro();
 				}
 		}
 
-		/// Cancela a compra do ingresso e fecha a janela
-		if(src == botaoCancelar) {
+		if (src == clienteVIP) {
+			novoDado[0] = valorForPag.getText();
+			novoDado[1] = valorTipoIngresso.getText();
+			novoDado[2] = valorNumSala.getText();
+			novoDado[3] = valorPreco.getText();
+			novoDado[4] = valorRecibo.getText();
+			novoDado[5] = valorTipoSala.getText();
+			novoDado[6] = valorNumCadeira.getText();
+			novoDado[7] = valorLetraCadeira.getText();
+			novoDado[8] = valorNomeFilme.getText();
+			novoDado[9] = valorIdioma.getText();
+			novoDado[10] = valorHora.getText();
+			novoDado[11] = valorData.getText();
+			
+			/// Caso de erro em cadastro de cliente
+			if ("".equals(novoDado[0]) || "".equals(novoDado[1]) || "".equals(novoDado[2].replaceAll("[\\D]", "")) || 
+					"".equals(novoDado[3].replaceAll("[\\D]", "")) || "".equals(novoDado[4].replaceAll("[\\D]", "")) ||
+					"".equals(novoDado[5]) || "".equals(novoDado[6].replaceAll("[\\D]", "")) ||"".equals(novoDado[7]) || 
+					"".equals(novoDado[8]) || "".equals(novoDado[9]) || "".equals(novoDado[10]) || "".equals(novoDado[11])) {
+				mensagemErroCadastro();
+			}
+			else {
+				Ingresso novoIngresso = new Ingresso(novoDado[1], Integer.parseInt(novoDado[2]), novoDado[5], 
+						Integer.parseInt(novoDado[6]), novoDado[7].charAt(0), novoDado[8], novoDado[9], 
+						novoDado[10], novoDado[11]);
+				
+				VendaIngresso novaVenda = new VendaIngresso(novoDado[0], Double.parseDouble(novoDado[3]), Integer.parseInt(novoDado[4]), novoIngresso);
+				
+				tela.criaTelaDetalheClienteVIP(cliente, venda, novaVenda, Double.parseDouble(novoDado[3]));
 				janela.dispose();
+			}
 		}
+		
+		/// Cancela a compra do ingresso e fecha a janela
+		if(src == botaoCancelar) janela.dispose();
+		
+		if (src == interrogacao) mensagemDuvida();
 	}
 
 	/**
@@ -221,7 +267,16 @@ public class TelaDetalheIngresso implements ActionListener {
 				+ "2- Duração do filme, classificação indicativa,"
 				+ "sala de transmissão\n e horário de exibição não contém apenas números;", null, 
 				JOptionPane.ERROR_MESSAGE);
-		janela.dispose();
+	}
+	
+	/**
+	 * Mostra uma mensagem que explica a funcionalidade do botão ClienteVIP
+	 */
+	
+	public void mensagemDuvida() {
+		JOptionPane.showMessageDialog(null, "Caso o cliente seja um Cliente VIP, "
+				+ "para avançar e registrar \nsua compra selecione o botão Cliente VIP. Caso contrário\n selecione apenas em Salvar.", null, 
+				JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }

@@ -7,7 +7,7 @@ import principal.*;
 
 
 /**
- * Criação da classe TelaPessoa, onde é criado o menu do ingresso e suas funcionalidades
+ * Criação da classe TelaIngresso, onde é criado o menu do ingresso e suas funcionalidades
  * @author Caio César e Lucas Henrique
  * @version 1.0 (Out 2020)
  */
@@ -25,14 +25,17 @@ public class TelaIngresso implements ActionListener {
 	/// Declaração dos dados a serem manipulados
 	private int qntddIngressos;
 	VendaIngresso venda = new VendaIngresso();
+	ClienteVIP cliente = new ClienteVIP();
 	private int i = 0;
 	
 	/**
 	 * Definir as características da interface do Menu de ingresso como botões, títulos, janelas e adicioná-los a janela
 	 * @param v VendaIngresso que importa os dados do ingresso criados no menu principal (TelaMenu)
+	 * @param c ClienteVIP que importa os dados do cliente criados no menu principal (TelaMenu)
 	 */
 	
-	public void criaTelaIngresso(VendaIngresso v){
+	public void criaTelaIngresso(VendaIngresso v, ClienteVIP c){
+		cliente = c;
 		venda = v;
 	
 		/// Cria um container e seus componentes
@@ -93,7 +96,7 @@ public class TelaIngresso implements ActionListener {
 				else {
 					qntddIngressos = Integer.parseInt(valorQntddIngressos.getText().replaceAll("[\\D]", ""));
 					while (i < qntddIngressos) {
-						new TelaDetalheIngresso().criarTelaDetalheIngresso(this, venda);
+						new TelaDetalheIngresso().criarTelaDetalheIngresso(this, venda, cliente);
 						i ++;
 					}
 					janela.dispose();

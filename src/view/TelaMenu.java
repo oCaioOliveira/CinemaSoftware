@@ -123,7 +123,7 @@ public class TelaMenu implements ActionListener {
 			new TelaFilme().criaTelaFilme(fil);
 		
 		if(src == ingresso)
-			new TelaIngresso().criaTelaIngresso(vi);
+			new TelaIngresso().criaTelaIngresso(vi, cliente);
 		
 		if(src == sair)
 			janela.dispose();

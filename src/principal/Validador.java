@@ -75,7 +75,7 @@ public class Validador {
 		if (cpf.replaceAll("[\\D]", "").length() != 11) 
 			return false;
 		
-		// Verifica se existem 2 "/" em posições específicas
+		// Verifica se existem 2 "." e 1 "-" em posições específicas
 		if (cpf.substring(3, 4).indexOf(".") != 0 || cpf.substring(7, 8).indexOf(".") != 0 || 
 				cpf.substring(11, 12).indexOf("-") != 0) 
 			return false;

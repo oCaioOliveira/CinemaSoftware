@@ -291,7 +291,6 @@ public class TelaDetalheFilme implements ActionListener {
 				+ "2- Duração do filme, classificação indicativa,"
 				+ "sala de transmissão\n e horário de exibição não contém apenas números;", null, 
 				JOptionPane.ERROR_MESSAGE);
-		janela.dispose();
 	}
 
 }
