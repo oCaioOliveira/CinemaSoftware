@@ -20,7 +20,7 @@ public class Filme {
 	private String genero;
 	private String dataLancamento;
 	private int salaTransmissao;
-	private int horario;
+	private String horario;
 	private String dataExib;
 	private Ingresso ingresso[];
 	
@@ -50,7 +50,7 @@ public class Filme {
 	
 	public Filme(String nomeDoFilme, int duracaoDoFilme, int classificacao, 
 			String idiomaDoFilme, String sinopseFilme, String generoFilme, 
-			String data_lancamento, int sala_transmissao, int hora, String dt) {
+			String data_lancamento, int sala_transmissao, String hora, String dt) {
 		nome = nomeDoFilme;
 		duracao = duracaoDoFilme;
 		classificacaoIndicativa = classificacao;
@@ -77,7 +77,7 @@ public class Filme {
 	public void dadosPreCadastradosFilmes(){
 		Filme shang_chi = new Filme("Shang-Chi",135,12,"Português","Shang-Chi "
 				+ "deve enfrentar o passado quando \né atraído para a teia da organização Dez Anéis.", 
-				"Ação","02/03/2021",2, 14,"15/03/2021");
+				"Ação","02/03/2021",2, "14:30","15/03/2021");
 		Filme viuva_negra = new Filme("Viúva Negra",133,12,"Português","Em Viúva Negra, acompanhamos a "
 				+ "vida de Natasha Romanoff (Scarlett Johansson)\n após os eventos de Guerra Civil. "
 				+ "Se escondendo do governo norte-americano \ndevido a sua aliança com o time do Capitão América, "
@@ -85,12 +85,12 @@ public class Filme {
 				+ "perigosa ligada ao seu passado. \nPerseguida por uma força que não irá parar até derrotá-la, "
 				+ "ela terá que lidar com sua \nantiga vida de espiã, e também reencontrar membros de sua família "
 				+ "que deixou para trás antes\n de se tornar parte dos Vingadores.",
-				"Ação","02/09/2021",10, 15,"23/08/2020");
+				"Ação","02/09/2021",10, "15:00","23/08/2020");
 		Filme pulp_fiction = new Filme("Pulp Fiction", 152,18,"Português","Os assassinos "
 				+ "Vincent e Jules passam por imprevistos \nao recuperar uma mala para um mafioso. "
 				+ "O boxeador Butch é pago pelo mesmo mafioso\n para perder uma luta, e a esposa do criminoso "
 				+ "fica sob responsabilidade de Vincent por\n uma noite.Essas histórias se relacionam numa teia "
-				+ "repleta de violência.","Ação","18/02/1995",13,12,"19/10/2021");
+				+ "repleta de violência.","Ação","18/02/1995",13,"12:45","19/10/2021");
 		Filme titanic = new Filme("Titanic", 194, 12, "Português","Jack Dawson (Leonardo DiCaprio) é um jovem "
 				+ "aventureiro que, na mesa de jogo, ganha uma passagem para a primeira viagem do transatlântico Titanic."
 				+ " Trata-se de um luxuoso e imponente navio, anunciado na época como inafundável, que parte para os Estados Unidos."
@@ -101,11 +101,11 @@ public class Filme {
 				+ "Pelo ato ele é convidado a jantar na primeira classe, onde começa a se tornar mais próximo de Rose."
 				+ " Logo eles se apaixonam, despertando a fúria de Caledon. "
 				+ "A situação fica ainda mais complicada quando o Titanic se choca com um iceberg, provocando algo que ninguém "
-				+ "imaginava ser possível: o naufrágio do navio.", "Drama","16/01/1998",8,22,"04/12/2021");
+				+ "imaginava ser possível: o naufrágio do navio.", "Drama","16/01/1998",8,"22:00","04/12/2021");
 		Filme gente_grande = new Filme("Gente Grande", 99,12,"Português","Cinco amigos de infância se reencontram após a morte de seu treinador.\n"
 				+ " Juntos novamente, Lenny (Adam Sandler), Eric (Kevin James), Kurt (Chris Rock), \nMarcus (David Spade) e Rob (Rob Schneider) "
 				+ "decidem curtir o feriado de\n 4 de julho com suas famílias em uma casa no lago.\n Eles relembram os bons momentos e fazem novas "
-				+ "descobertas,\n além de se meterem em muitas confusões.","Comédia","24/09/2010",5, 6,"16/12/2021");
+				+ "descobertas,\n além de se meterem em muitas confusões.","Comédia","24/09/2010",5, "18:00","16/12/2021");
 	
 		dadosFilmes.add(shang_chi);
 		dadosFilmes.add(viuva_negra);
@@ -133,7 +133,7 @@ public class Filme {
 	
 	// Funcao para cadastrar um filme vazio:
 	public void cadastrarvazio() {
-		Filme filme = new Filme("",0,0,"","", "","",0, 0,"");
+		Filme filme = new Filme("",0,0,"","", "","",0, "","");
 		dadosFilmes.add(filme);
 	}
 	
@@ -143,7 +143,7 @@ public class Filme {
 	
 	// Funcao para retornar que não foram encontrados resultados:
 	public void produtoNaoEncontrado() {
-		Filme filme = new Filme("Não foram encontrados resultados...",0,0,"","", "","",0, 0,"");
+		Filme filme = new Filme("Não foram encontrados resultados...",0,0,"","", "","",0, "","");
 		dadosFilmes.add(filme);
 	}
 	
@@ -317,7 +317,7 @@ public class Filme {
 	 * @return o inteiro do horário do filme específico
 	 */
 	
-	public int retornaHorario(int pos) {
+	public String retornaHorario(int pos) {
 		return dadosFilmes.get(pos).getHorario();
 	}
 	
@@ -482,7 +482,7 @@ public class Filme {
 	 * @return um inteiro do horário de exibição do filme específico
 	 */
 	
-	public int getHorario() {
+	public String getHorario() {
 		return horario;
 	}
 	
@@ -491,7 +491,7 @@ public class Filme {
 	 * @param horario um inteiro do horário de exibição do filme
 	 */
 
-	public void setHorario(int horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
 	

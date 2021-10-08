@@ -288,7 +288,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			
 			/// Caso de erro em cadastro de funcionario
 			else if ((opcao == 2 || opcao == 4) && ("".equals(novoDado[0]) || "".equals(novoDado[1]) || "".equals(novoDado[2]) || "".equals(novoDado[4]) ||
-					"".equals(novoDado[5]) || "".equals(novoDado[9].replaceAll("[\\D]", "")) ||"".equals(novoDado[10]) || "".equals(novoDado[11]))) {
+					"".equals(novoDado[5]) || "".equals(novoDado[9]) ||"".equals(novoDado[10]) || "".equals(novoDado[11]))) {
 				mensagemErroCadastroFuncionario();
 			}
 			

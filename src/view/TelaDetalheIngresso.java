@@ -177,14 +177,14 @@ public class TelaDetalheIngresso implements ActionListener {
 				if ("".equals(novoDado[0]) || "".equals(novoDado[1]) || "".equals(novoDado[2].replaceAll("[\\D]", "")) || 
 						"".equals(novoDado[3].replaceAll("[\\D]", "")) || "".equals(novoDado[4].replaceAll("[\\D]", "")) ||
 						"".equals(novoDado[5]) || "".equals(novoDado[6].replaceAll("[\\D]", "")) ||"".equals(novoDado[7]) || 
-						"".equals(novoDado[8]) || "".equals(novoDado[9]) || "".equals(novoDado[10].replaceAll("[\\D]", "")) || "".equals(novoDado[11])) {
+						"".equals(novoDado[8]) || "".equals(novoDado[9]) || "".equals(novoDado[10]) || "".equals(novoDado[11])) {
 					mensagemErroCadastro();
 				}
 				
 				else {
 					Ingresso novoIngresso = new Ingresso(novoDado[1], Integer.parseInt(novoDado[2]), novoDado[5], 
 							Integer.parseInt(novoDado[6]), novoDado[7].charAt(0), novoDado[8], novoDado[9], 
-							Integer.parseInt(novoDado[10]), novoDado[11]);
+							novoDado[10], novoDado[11]);
 					
 					VendaIngresso novavenda = new VendaIngresso(novoDado[0], Double.parseDouble(novoDado[3]), Integer.parseInt(novoDado[4]), novoIngresso);
 					

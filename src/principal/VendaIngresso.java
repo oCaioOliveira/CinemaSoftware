@@ -61,15 +61,15 @@ public class VendaIngresso{
 	 */
 	
 	public void dadosPreCadastradosVendaIngresso() {
-		Ingresso in1 = new Ingresso("Meia",2,"3D",11,'C', "Shang-Chi e a lenda dos dez anéis","Português",12,"02/09/2021");
+		Ingresso in1 = new Ingresso("Meia",2,"3D",11,'C', "Shang-Chi e a lenda dos dez anéis","Português","12:30","02/09/2021");
 		VendaIngresso venda1 = new VendaIngresso("Cartão", 12.0, 120549, in1);
-		Ingresso in2 = new Ingresso("Inteira",10,"VIP",12,'C', "Viúva Negra","Português",12,"05/05/2020");
+		Ingresso in2 = new Ingresso("Inteira",10,"VIP",12,'C', "Viúva Negra","Português","12:00","05/05/2020");
 		VendaIngresso venda2 = new VendaIngresso("Dinheiro", 22.0, 195723, in2);
-		Ingresso in3 = new Ingresso("Meia",13,"Normal",13,'E',"Pulp Fiction - Tempo de Violência","Português",23,"02/07/2019");
+		Ingresso in3 = new Ingresso("Meia",13,"Normal",13,'E',"Pulp Fiction - Tempo de Violência","Português","23:00","02/07/2019");
 		VendaIngresso venda3 = new VendaIngresso("Dinheiro", 11.0, 918723, in3);
-		Ingresso in4 = new Ingresso("Inteira",8,"Normal",14,'O',"TITANIC","Português",20,"07/07/2021");
+		Ingresso in4 = new Ingresso("Inteira",8,"Normal",14,'O',"TITANIC","Português","20:00","07/07/2021");
 		VendaIngresso venda4 = new VendaIngresso("Cartão", 36.0, 819572, in4);
-		Ingresso in5 = new Ingresso("Meia",5,"Normal",15,'P',"Gente Grande","Português",16,"21/12/2010");
+		Ingresso in5 = new Ingresso("Meia",5,"Normal",15,'P',"Gente Grande","Português","16:45","21/12/2010");
 		VendaIngresso venda5 = new VendaIngresso("Dinheiro", 22.0, 716482, in5);
 		
 		dadosVendaIngresso.add(venda1);

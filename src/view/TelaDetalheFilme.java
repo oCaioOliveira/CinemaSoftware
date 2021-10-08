@@ -100,7 +100,7 @@ public class TelaDetalheFilme implements ActionListener {
 			valorGenero = new JTextField(filme.retornaGenero(posicao), 200);
 			valorDataLanc = new JTextField(filme.retornaDataLanc(posicao), 200);	
 			valorSalaTrans = new JTextField(String.valueOf(filme.retornaSalaTrans(posicao)), 200);
-			valorHora = new JTextField(String.valueOf(filme.retornaHorario(posicao)), 200);
+			valorHora = new JTextField(filme.retornaHorario(posicao), 200);
 			valorDataExib = new JTextField(filme.retornaDataExib(posicao), 200);
 
 		} 
@@ -220,7 +220,7 @@ public class TelaDetalheFilme implements ActionListener {
 				if ((opcao == 1 || opcao == 2) && ("".equals(novoDado[0]) || "".equals(novoDado[1]) || "".equals(novoDado[2]) || 
 						"".equals(novoDado[3].replaceAll("[\\D]", "")) || "".equals(novoDado[4].replaceAll("[\\D]", "")) ||
 						"".equals(novoDado[5]) || "".equals(novoDado[6]) ||"".equals(novoDado[7].replaceAll("[\\D]", "")) || 
-						"".equals(novoDado[8].replaceAll("[\\D]", "")) || "".equals(novoDado[9]))) {
+						"".equals(novoDado[8]) || "".equals(novoDado[9]))) {
 					mensagemErroCadastro();
 				}
 				
@@ -229,7 +229,7 @@ public class TelaDetalheFilme implements ActionListener {
 					Filme novoFilme = new Filme(novoDado[0], Integer.parseInt(novoDado[3]), 
 							Integer.parseInt(novoDado[4]), novoDado[1], novoDado[2], 
 							novoDado[5], novoDado[6], Integer.parseInt(novoDado[7]), 
-							Integer.parseInt(novoDado[8]), novoDado[9]);
+							novoDado[8], novoDado[9]);
 					
 					filme.cadastrar(novoFilme);
 					mensagemSucessoCadastro();
@@ -240,7 +240,7 @@ public class TelaDetalheFilme implements ActionListener {
 					Filme attFilme = new Filme(novoDado[0], Integer.parseInt(novoDado[3]), 
 							Integer.parseInt(novoDado[4]), novoDado[1], novoDado[2], 
 							novoDado[5], novoDado[6], Integer.parseInt(novoDado[7]), 
-							Integer.parseInt(novoDado[8]), novoDado[9]);
+							novoDado[8], novoDado[9]);
 					
 					filme.editar(attFilme, posicao);
 					mensagemSucessoCadastro();

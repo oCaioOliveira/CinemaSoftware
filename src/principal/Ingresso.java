@@ -19,7 +19,7 @@ public class Ingresso {
 	private char letraCadeira;
 	private String nomeFilme;
 	private String idioma;
-	private int horarioSessao;
+	private String horarioSessao;
 	private String dataExibicao;
 	private VendaIngresso venda[];
 	 
@@ -39,7 +39,7 @@ public class Ingresso {
 	 */
 
 	public Ingresso(String tipo_ingresso, int num_sala, String tipo_sala, int num_cadeira, 
-			char letra_cadeira, String nomeDoFilme, String idiomaFilme, int hora, 
+			char letra_cadeira, String nomeDoFilme, String idiomaFilme, String hora, 
 			String data_exibicao) {
 		tipoIngresso = tipo_ingresso;
 		numSala = num_sala;
@@ -191,7 +191,7 @@ public class Ingresso {
 	 * @return um inteiro do horário de sessão do filme do ingresso
 	 */
 
-	public int getHorarioSessao() {
+	public String getHorarioSessao() {
 		return horarioSessao;
 	}
 	
@@ -200,7 +200,7 @@ public class Ingresso {
 	 * @param horarioSessao um inteiro do horário de sessão do filme do ingresso
 	 */
 
-	public void setHorarioSessao(int horarioSessao) {
+	public void setHorarioSessao(String horarioSessao) {
 		this.horarioSessao = horarioSessao;
 	}
 	
