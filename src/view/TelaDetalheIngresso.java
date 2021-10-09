@@ -12,28 +12,28 @@ import javax.swing.JTextField;
 import principal.*;
 
 /**
- * CriaÁ„o da classe TelaDetalheIngresso, onde È criado o menu de detalhes do ingresso e suas funcionalidades
- * @author Caio CÈsar e Lucas Henrique
+ * Cria√ß√£o da classe TelaDetalheIngresso, onde √© criado o menu de detalhes do ingresso e suas funcionalidades
+ * @author Caio C√©sar e Lucas Henrique
  * @version 1.0 (Out 2020)
  */
 
 public class TelaDetalheIngresso implements ActionListener {
 	
-	/// DeclaraÁ„o dos componentes da GUI
+	/// Declara√ß√£o dos componentes da GUI
 	private JFrame janela;
 	private JLabel labelForPag = new JLabel("Forma de Pagamento: ");
 	private JTextField valorForPag;
-	private JLabel labelPreco = new JLabel("PreÁo: ");
+	private JLabel labelPreco = new JLabel("Pre√ßo: ");
 	private JTextField valorPreco;
-	private JLabel labelRecibo = new JLabel("Recibo: "); 
+	private JLabel labelRecibo = new JLabel("N√∫mero de Recibo: "); 
 	private JTextField valorRecibo;
 	private JLabel labelTipoIngresso = new JLabel("Tipo de Ingresso: ");
 	private JTextField valorTipoIngresso;
-	private JLabel labelNumSala = new JLabel("N˙mero da Sala: ");
+	private JLabel labelNumSala = new JLabel("N√∫mero da Sala: ");
 	private JTextField valorNumSala;
 	private JLabel labelTipoSala = new JLabel("Tipo da Sala: ");
 	private JTextField valorTipoSala;
-	private JLabel labelNumCadeira = new JLabel("N˙mero da Cadeira: ");
+	private JLabel labelNumCadeira = new JLabel("N√∫mero da Cadeira: ");
 	private JTextField valorNumCadeira;
 	private JLabel labelLetraCadeira = new JLabel("Letra da Cadeira: ");
 	private JTextField valorLetraCadeira;
@@ -41,7 +41,7 @@ public class TelaDetalheIngresso implements ActionListener {
 	private JTextField valorNomeFilme;
 	private JLabel labelIdioma = new JLabel("Idioma do Filme: ");
 	private JTextField valorIdioma;
-	private JLabel labelHora = new JLabel("Hor·rio do Filme: ");
+	private JLabel labelHora = new JLabel("Hor√°rio do Filme: ");
 	private JTextField valorHora;
 	private JLabel labelData = new JLabel("Data do Filme: ");
 	private JTextField valorData;
@@ -50,14 +50,14 @@ public class TelaDetalheIngresso implements ActionListener {
 	private JButton clienteVIP = new JButton("Cliente VIP");
 	private JButton interrogacao = new JButton("?");;
 	
-	/// DeclaraÁ„o de dados a serem manipulados
+	/// Declara√ß√£o de dados a serem manipulados
 	private String[] novoDado = new String[13];
 	VendaIngresso venda = new VendaIngresso();
 	TelaDetalheClienteVIP tela = new TelaDetalheClienteVIP();
 	ClienteVIP cliente = new ClienteVIP();
 	
 	/**
-	 * Definir as caracterÌsticas da interface do Menu de detalhes do ingresso como botıes, tÌtulos, janelas e adicion· los a janela
+	 * Definir as caracter√≠sticas da interface do Menu de detalhes do ingresso como bot√µes, t√≠tulos, janelas e adicion√° los a janela
 	 * @param p TelaIngresso que importa a classe Tela Ingresso
 	 * @param vi VendaIngresso que importa os dados do ingresso criados no menu principal (TelaMenu) e menu do filme (TelaIngresso)
 	 * @param c ClienteVIP que importa os dados do cliente criados no menu principal (TelaMenu)
@@ -112,7 +112,7 @@ public class TelaDetalheIngresso implements ActionListener {
 		clienteVIP.setBounds(100, 435, 150, 50);
 		interrogacao.setBounds(280, 435, 50, 50);
 		
-		/// Realiza a seleÁ„o de fontes para os botıes "salvar" e "cancelar"
+		/// Realiza a sele√ß√£o de fontes para os bot√µes "salvar" e "cancelar"
 		botaoSalvar.setFont(new Font("Arial", Font.BOLD, 18));
 		botaoCancelar.setFont(new Font("Arial", Font.BOLD, 18));
 		clienteVIP.setFont(new Font("Arial", Font.BOLD, 18));
@@ -157,7 +157,7 @@ public class TelaDetalheIngresso implements ActionListener {
 		this.janela.setLocationRelativeTo(null);
 		this.janela.setResizable(false);
 
-		/// DetecÁ„o de eventos
+		/// Detec√ß√£o de eventos
 		botaoSalvar.addActionListener(this);
 		botaoCancelar.addActionListener(this);
 		clienteVIP.addActionListener(this);
@@ -165,11 +165,11 @@ public class TelaDetalheIngresso implements ActionListener {
 	}
 	
 	/**
-	 * Detecta as aÁıes e redireciona para as opÁıes e funcionalidades possÌveis
-	 * @param e ActionEvent que detecta alguma aÁ„o com algum bot„o
+	 * Detecta as a√ß√µes e redireciona para as op√ß√µes e funcionalidades poss√≠veis
+	 * @param e ActionEvent que detecta alguma a√ß√£o com algum bot√£o
 	 */
 
-	/// DetecÁ„o de eventos relacionados aos dados do ingresso
+	/// Detec√ß√£o de eventos relacionados aos dados do ingresso
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if(src == botaoSalvar) {				
@@ -251,31 +251,31 @@ public class TelaDetalheIngresso implements ActionListener {
 	
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!\n"
-				+ "O preÁo do pedido foi de " + novoDado[3] + ",00 R$.", null, 
+				+ "O pre√ßo do pedido foi de " + novoDado[3] + ",00 R$.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
 	
 	/**
-	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados do filme e apresentar as possÌveis causas
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados do filme e apresentar as poss√≠veis causas
 	 */
 	
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1- Nem todos os campos foram preenchidos; \n"
-				+ "2- DuraÁ„o do filme, classificaÁ„o indicativa,"
-				+ "sala de transmiss„o\n e hor·rio de exibiÁ„o n„o contÈm apenas n˙meros;", null, 
+				+ "2- Dura√ß√£o do filme, classifica√ß√£o indicativa,"
+				+ "sala de transmiss√£o\n e hor√°rio de exibi√ß√£o n√£o cont√©m apenas n√∫meros;", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	/**
-	 * Mostra uma mensagem que explica a funcionalidade do bot„o ClienteVIP
+	 * Mostra uma mensagem que explica a funcionalidade do bot√£o ClienteVIP
 	 */
 	
 	public void mensagemDuvida() {
 		JOptionPane.showMessageDialog(null, "Caso o cliente seja um Cliente VIP, "
-				+ "para avanÁar e registrar \nsua compra selecione o bot„o Cliente VIP. Caso contr·rio\n selecione apenas em Salvar.", null, 
+				+ "para avan√ßar e registrar \nsua compra selecione o bot√£o Cliente VIP. Caso contr√°rio\n selecione apenas em Salvar.", null, 
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 
