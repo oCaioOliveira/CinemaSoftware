@@ -13,44 +13,44 @@ import javax.swing.JTextField;
 import principal.*;
 
 /**
- * CriaÁ„o da classe TelaDetalhePessoa, onde È criado o menu de detalhes do cliente ou funcion·rio e suas funcionalidades
- * @author Caio CÈsar e Lucas Henrique
+ * Cria√ß√£o da classe TelaDetalhePessoa, onde √© criado o menu de detalhes do cliente ou funcion√°rio e suas funcionalidades
+ * @author Caio C√©sar e Lucas Henrique
  * @version 1.0 (Out 2020)
  */
 
 public class TelaDetalhePessoa implements ActionListener {
 
-	/// DeclaraÁ„o dos componentes da GUI
+	/// Declara√ß√£o dos componentes da GUI
 	private JFrame janela;
 	private JLabel labelPrimNome = new JLabel("Primeiro Nome: ");
 	private JTextField valorPrimNome;
-	private JLabel labelUltNome = new JLabel("⁄ltimo Nome: ");
+	private JLabel labelUltNome = new JLabel("√öltimo Nome: ");
 	private JTextField valorUltNome;
-	private JLabel labelData = new JLabel("Data: ");
+	private JLabel labelData = new JLabel("Data de Nascimento: ");
 	private JTextField valorData;
 	private JLabel labelCPF = new JLabel("CPF: ");
 	private JTextField valorCPF;
-	private JLabel labelNumCel = new JLabel("N˙mero de Celular: ");
+	private JLabel labelNumCel = new JLabel("N√∫mero de Celular: ");
 	private JTextField valorNumCel;
 	private JLabel labelEmail = new JLabel("e-mail: ");
 	private JTextField valorEmail;
-	private JLabel labelGenFav = new JLabel("GÍnero Favorito: ");
+	private JLabel labelGenFav = new JLabel("G√™nero Favorito: ");
 	private JTextField valorGenFav;
 	private JLabel labelQntddFilmesVistos = new JLabel("Filmes Vistos: ");
 	private JTextField valorQntddFilmesVistos;
 	private JLabel labelPlanoAss = new JLabel("Plano de Assinatura: ");
 	private JTextField valorPlanoAss;
-	private JLabel labelFuncao = new JLabel("FunÁ„o: ");
+	private JLabel labelFuncao = new JLabel("Fun√ß√£o: ");
 	private JTextField valorFuncao;
-	private JLabel labelEndereco = new JLabel("EndereÁo: ");
+	private JLabel labelEndereco = new JLabel("Endere√ßo: ");
 	private JTextField valorEndereco;
-	private JLabel labelSalario = new JLabel("Sal·rio: ");
+	private JLabel labelSalario = new JLabel("Sal√°rio: ");
 	private JTextField valorSalario;
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 	private JButton botaoCancelar = new JButton("Cancelar");
 	
-	/// DeclaraÁ„o de dados a serem manipulados
+	/// Declara√ß√£o de dados a serem manipulados
 	private String[] novoDado = new String[12];
 	private int posicao;
 	private int opcao;
@@ -60,12 +60,12 @@ public class TelaDetalhePessoa implements ActionListener {
 	TelaPessoa p = new TelaPessoa();
 	
 	/**
-	 * Definir as caracterÌsticas da interface do Menu de detalhes dos clientes ou funcionarios como botıes, tÌtulos, janelas e adicion· los a janela
-	 * @param op inteiro que representa a opÁ„o selecionada no menu de cliente ou funcionario (TelaPessoa)
+	 * Definir as caracter√≠sticas da interface do Menu de detalhes dos clientes ou funcionarios como bot√µes, t√≠tulos, janelas e adicion√° los a janela
+	 * @param op inteiro que representa a op√ß√£o selecionada no menu de cliente ou funcionario (TelaPessoa)
 	 * @param p TelaPessoa que importa a classe Tela Pessoa
 	 * @param c ClienteVIP que importa os dados do cliente criado no menu principal (TelaMenu) e menu do cliente ou funcionario (TelaPessoa)
-	 * @param f Funcionario que importa os dados do funcion·rio criado no menu principal (TelaMenu) e menu do cliente ou funcionario (TelaPessoa)
-	 * @param pos inteiro que representa a posiÁ„o do cliente ou funcionario na lista do menu do cliente ou funcionario (TelaPessoa)
+	 * @param f Funcionario que importa os dados do funcion√°rio criado no menu principal (TelaMenu) e menu do cliente ou funcionario (TelaPessoa)
+	 * @param pos inteiro que representa a posi√ß√£o do cliente ou funcionario na lista do menu do cliente ou funcionario (TelaPessoa)
 	 */
 	
 	public void criarTelaDetalhePessoa(int op, 
@@ -77,9 +77,9 @@ public class TelaDetalhePessoa implements ActionListener {
 		funcionario = f;
 
 		if (op == 1) s = "Cadastro de Cliente";
-		if (op == 2) s = "Cadastro de Funcion·rio";
+		if (op == 2) s = "Cadastro de Funcion√°rio";
 		if (op == 3) s = "Detalhes de Cliente";
-		if (op == 4) s = "Detalhes de Funcion·rio";
+		if (op == 4) s = "Detalhes de Funcion√°rio";
 
 		/// Cria um container
 		janela = new JFrame(s);
@@ -116,7 +116,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorSalario = new JTextField(200);
 			
 		} else if (op == 3) {
-			/// Recebe o valor de cada vari·vel
+			/// Recebe o valor de cada vari√°vel
 			valorPrimNome = new JTextField(cliente.retornaPrimNome(posicao), 200);
 			valorUltNome = new JTextField(cliente.retornaUltNome(posicao),200);
 			valorData = new JTextField(cliente.retornaData(posicao), 200);
@@ -132,7 +132,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorSalario = new JTextField(200);
 
 		} else if (op == 4) { 
-			/// Recebe o valor de cada vari·vel
+			/// Recebe o valor de cada vari√°vel
 			valorPrimNome = new JTextField(funcionario.retornaPrimNome(posicao), 200);
 			valorUltNome = new JTextField(funcionario.retornaUltNome(posicao),200);
 			valorData = new JTextField(funcionario.retornaData(posicao), 200);
@@ -186,7 +186,7 @@ public class TelaDetalhePessoa implements ActionListener {
 
 		}
 
-		/// Coloca os componentes no container caso Funcion·rio
+		/// Coloca os componentes no container caso Funcion√°rio
 		if (op == 2 || op == 4) {
 			this.janela.add(labelFuncao);
 			this.janela.add(valorFuncao);
@@ -196,14 +196,14 @@ public class TelaDetalhePessoa implements ActionListener {
 			this.janela.add(valorSalario);
 		}
 
-		/// Caso de alteraÁ„o/remoÁ„o
+		/// Caso de altera√ß√£o/remo√ß√£o
 		if (op == 3 || op == 4) {
 			
 			/// Realiza o posicionamento dos componentes exclusivos.
 			botaoSalvar.setBounds(180, 290, 150, 50);
 			botaoExcluir.setBounds(10, 290, 150, 50);
 			
-			/// Realiza a seleÁ„o de fontes para os botıes "salvar" e "excluir"
+			/// Realiza a sele√ß√£o de fontes para os bot√µes "salvar" e "excluir"
 			botaoSalvar.setFont(new Font("Arial", Font.BOLD, 18));
 			botaoExcluir.setFont(new Font("Arial", Font.BOLD, 18));
 			
@@ -219,7 +219,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			botaoSalvar.setBounds(180, 290, 150, 50);
 			botaoCancelar.setBounds(10, 290, 150, 50);
 			
-			/// Realiza a seleÁ„o de fontes para os botıes "salvar" e "cancelar"
+			/// Realiza a sele√ß√£o de fontes para os bot√µes "salvar" e "cancelar"
 			botaoSalvar.setFont(new Font("Arial", Font.BOLD, 18));
 			botaoCancelar.setFont(new Font("Arial", Font.BOLD, 18));
 			
@@ -251,18 +251,18 @@ public class TelaDetalhePessoa implements ActionListener {
 		this.janela.setLocationRelativeTo(null);
 		this.janela.setResizable(false);
 
-		/// DetecÁ„o de eventos
+		/// Detec√ß√£o de eventos
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
 		botaoCancelar.addActionListener(this);
 	}
 
 	/**
-	 * Detecta as aÁıes e redireciona para as opÁıes e funcionalidades possÌveis
-	 * @param e ActionEvent que detecta alguma aÁ„o com algum bot„o
+	 * Detecta as a√ß√µes e redireciona para as op√ß√µes e funcionalidades poss√≠veis
+	 * @param e ActionEvent que detecta alguma a√ß√£o com algum bot√£o
 	 */
 	
-	/// DetecÁ„o de eventos relacionados aos dados da Pessoa
+	/// Detec√ß√£o de eventos relacionados aos dados da Pessoa
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -310,7 +310,7 @@ public class TelaDetalhePessoa implements ActionListener {
 				mensagemSucessoCadastro();
 			} 
 			
-			/// Caso de alteraÁ„o/remoÁ„o
+			/// Caso de altera√ß√£o/remo√ß√£o
 			else if (opcao == 3) {
 				ClienteVIP attCliente = new ClienteVIP(novoDado[0], novoDado[3], 
 						novoDado[4], novoDado[1], novoDado[2], novoDado[5], novoDado[6], 
@@ -319,7 +319,7 @@ public class TelaDetalhePessoa implements ActionListener {
 				mensagemSucessoCadastro();
 			} 
 			
-			/// Caso de alteraÁ„o/remoÁ„o
+			/// Caso de altera√ß√£o/remo√ß√£o
 			else if (opcao == 4) {
 				Funcionario attFuncionario = new Funcionario(novoDado[0], novoDado[3], 
 						novoDado[4], novoDado[1], novoDado[2], novoDado[5], novoDado[9], 
@@ -339,7 +339,7 @@ public class TelaDetalhePessoa implements ActionListener {
 				mensagemSucessoExclusao();
 			}
 			
-			/// Caso funcion·rio
+			/// Caso funcion√°rio
 			if (opcao == 4){ //exclui professor
 				funcionario.deletar(posicao);
 				mensagemSucessoExclusao(); 
@@ -354,7 +354,7 @@ public class TelaDetalhePessoa implements ActionListener {
 	}
 
 	/**
-	 * Mostra uma mensagem para indicar que houve sucesso na exclus„o de dados
+	 * Mostra uma mensagem para indicar que houve sucesso na exclus√£o de dados
 	 */
 	
 	public void mensagemSucessoExclusao() {
@@ -374,26 +374,26 @@ public class TelaDetalhePessoa implements ActionListener {
 	}
 	
 	/**
-	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados de cliente e apresentar as possÌveis causas
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados de cliente e apresentar as poss√≠veis causas
 	 */
 	
 	public void mensagemErroCadastroCliente() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1- Nem todos os campos foram preenchidos; \n"
-				+ "2- Filmes Vistos n„o contÈm apenas n˙meros", null, 
+				+ "2- Filmes Vistos n√£o cont√©m apenas n√∫meros", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	/**
-	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados de funcion·rio e apresentar as possÌveis causas
+	 * Mostra uma mensagem para indicar que houve falha no cadastro ou salvamento de dados de funcion√°rio e apresentar as poss√≠veis causas
 	 */
 	
 	public void mensagemErroCadastroFuncionario() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1- Nem todos os campos foram preenchidos; \n"
-				+ "2- Sal·rio n„o contÈm apenas n˙meros;", null, 
+				+ "2- Sal√°rio n√£o cont√©m apenas n√∫meros;", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
