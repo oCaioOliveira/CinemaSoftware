@@ -41,9 +41,9 @@ public class TelaDetalheIngresso implements ActionListener {
 	private JTextField valorNomeFilme;
 	private JLabel labelIdioma = new JLabel("Idioma do Filme: ");
 	private JTextField valorIdioma;
-	private JLabel labelHora = new JLabel("Horário do Filme: ");
+	private JLabel labelHora = new JLabel("Horário de Exibição: ");
 	private JTextField valorHora;
-	private JLabel labelData = new JLabel("Data do Filme: ");
+	private JLabel labelData = new JLabel("Data de Exibição: ");
 	private JTextField valorData;
 	private JButton botaoCancelar = new JButton("Cancelar");
 	private JButton botaoSalvar = new JButton("Salvar");
