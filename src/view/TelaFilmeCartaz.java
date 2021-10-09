@@ -7,14 +7,14 @@ import javax.swing.*;
 import principal.Filme;
 
 /**
- * CriaÁ„o da classe TelaFilmeCartaz, onde È criado um menu que mostra os filmes em cartaz e suas sinopses
- * @author Caio CÈsar e Lucas Henrique
+ * Cria√ß√£o da classe TelaFilmeCartaz, onde √© criado um menu que mostra os filmes em cartaz e suas sinopses
+ * @author Caio C√©sar e Lucas Henrique
  * @version 1.0 (Out 2020)
  */
 
 public class TelaFilmeCartaz implements ActionListener{	
 	
-	/// DeclaraÁ„o dos componentes da GUI
+	/// Declara√ß√£o dos componentes da GUI
 	private JFrame janela;
 	private JLabel titulo;
 	private JButton seta;
@@ -33,7 +33,7 @@ public class TelaFilmeCartaz implements ActionListener{
 	Filme filme = new Filme();
 	
 	/**
-	 * Definir as caracterÌsticas da interface do menu dos filmes em cartaz como botıes, tÌtulos, janelas e adicion·-los a janela
+	 * Definir as caracter√≠sticas da interface do menu dos filmes em cartaz como bot√µes, t√≠tulos, janelas e adicion√°-los a janela
 	 * @param f Filme que importa os dados de filme criados no menu principal (TelaMenu)
 	 */
 	
@@ -45,11 +45,11 @@ public class TelaFilmeCartaz implements ActionListener{
 		titulo = new JLabel("Filmes em Cartaz");
 		seta = new JButton("<");
 		sinopse1 = new JButton("Shang-Chi");
-		sinopse2 = new JButton("Vi˙va Negra");
+		sinopse2 = new JButton("Vi√∫va Negra");
 		sinopse3 = new JButton("Pulp Fiction");
 		sinopse4 = new JButton("Gente Grande");
 		
-		/// Realiza a seleÁ„o de fontes para cada um dos componentes
+		/// Realiza a sele√ß√£o de fontes para cada um dos componentes
 		titulo.setFont(new Font("Arial", Font.BOLD, 30));
 		sinopse1.setFont(new Font("Arial", Font.BOLD, 15));
 		sinopse2.setFont(new Font("Arial", Font.BOLD, 15));
@@ -93,7 +93,7 @@ public class TelaFilmeCartaz implements ActionListener{
 		janela.setResizable(false);
 		//janela.getContentPane().setBackground(Color.black);
 	
-		/// DetecÁ„o de eventos
+		/// Detec√ß√£o de eventos
 		seta.addActionListener(this);
 		sinopse1.addActionListener(this);
 		sinopse2.addActionListener(this);
@@ -103,11 +103,11 @@ public class TelaFilmeCartaz implements ActionListener{
 	}
 
 	/**
-	 * Detecta as aÁıes e redireciona para as opÁıes e funcionalidades possÌveis
-	 * @param e ActionEvent que detecta alguma aÁ„o com algum bot„o
+	 * Detecta as a√ß√µes e redireciona para as op√ß√µes e funcionalidades poss√≠veis
+	 * @param e ActionEvent que detecta alguma a√ß√£o com algum bot√£o
 	 */
 	
-	/// DetecÁ„o de eventos relacionados aos botıes
+	/// Detec√ß√£o de eventos relacionados aos bot√µes
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -124,46 +124,46 @@ public class TelaFilmeCartaz implements ActionListener{
 	}
 	
 	/**
-	 * Mostra a sinopse do filme Shang-Chi ou a mensagem de erro caso o filme seja excluÌdo
+	 * Mostra a sinopse do filme Shang-Chi ou a mensagem de erro caso o filme seja exclu√≠do
 	 */
 	
 	public void mensagemSinopse1() {
-		if (filme.retornaPos("SHANG-CHI") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
+		if (filme.retornaPos("SHANG-CHI") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme n√£o est√° mais em cartaz.", null, 
 				JOptionPane.ERROR_MESSAGE);
 		else JOptionPane.showMessageDialog(null, "Sinopse: " + filme.retornaSinopse(filme.retornaPos("SHANG-CHI")), null, 
 				JOptionPane.DEFAULT_OPTION);
 	}
 	
 	/**
-	 * Mostra a sinopse do filme Vi˙va Negra ou a mensagem de erro caso o filme seja excluÌdo
+	 * Mostra a sinopse do filme Vi√∫va Negra ou a mensagem de erro caso o filme seja exclu√≠do
 	 */
 	
 	public void mensagemSinopse2() {
-		if (filme.retornaPos("VI⁄VA NEGRA") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
+		if (filme.retornaPos("VI√öVA NEGRA") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme n√£o est√° mais em cartaz.", null, 
 				JOptionPane.ERROR_MESSAGE);
-		else JOptionPane.showMessageDialog(null, "Sinopse: " + filme.retornaSinopse(filme.retornaPos("VI⁄VA NEGRA")), null, 
+		else JOptionPane.showMessageDialog(null, "Sinopse: " + filme.retornaSinopse(filme.retornaPos("VI√öVA NEGRA")), null, 
 				JOptionPane.DEFAULT_OPTION);
 	}	
 	
 	/**
-	 * Mostra a sinopse do filme Pulp Fiction ou a mensagem de erro caso o filme seja excluÌdo
+	 * Mostra a sinopse do filme Pulp Fiction ou a mensagem de erro caso o filme seja exclu√≠do
 	 */
 	
 	
 	public void mensagemSinopse3() {
-		if (filme.retornaPos("PULP FICTION") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
+		if (filme.retornaPos("PULP FICTION") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme n√£o est√° mais em cartaz.", null, 
 				JOptionPane.ERROR_MESSAGE);
 		else JOptionPane.showMessageDialog(null, "Sinopse: " + filme.retornaSinopse(filme.retornaPos("PULP FICTION")), null, 
 				JOptionPane.DEFAULT_OPTION);
 	}	
 	
 	/**
-	 * Mostra a sinopse do filme Gente Grande ou a mensagem de erro caso o filme seja excluÌdo
+	 * Mostra a sinopse do filme Gente Grande ou a mensagem de erro caso o filme seja exclu√≠do
 	 */
 	
 	
 	public void mensagemSinopse4() {
-		if (filme.retornaPos("GENTE GRANDE") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme foi deletado", null, 
+		if (filme.retornaPos("GENTE GRANDE") == -1) JOptionPane.showMessageDialog(null, "ERRO!\nEsse filme n√£o est√° mais em cartaz.", null, 
 				JOptionPane.ERROR_MESSAGE);
 		else JOptionPane.showMessageDialog(null, "Sinopse: " + filme.retornaSinopse(filme.retornaPos("GENTE GRANDE")), null, 
 				JOptionPane.DEFAULT_OPTION);
